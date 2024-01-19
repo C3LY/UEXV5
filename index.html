@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monolab Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            background-color: #fff;
+            /* White background */
+        }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 50%;
+            /* Sidebar takes up half the width */
+            min-height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            /* Align portfolio titles to the right */
+            padding: 20px;
+        }
+
+        .image-preview {
+            width: 50%;
+            /* Image preview takes up the other half */
+            min-height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .portfolio-item {
+            font-size: 48px;
+            font-weight: 900;
+            margin: 20px 0;
+            padding-bottom: 10px;
+            padding-left: 50px;
+            cursor: pointer;
+            transform: rotate(-90deg);
+            transform-origin: right bottom;
+            white-space: nowrap;
+        }
+
+        .portfolio-description {
+            writing-mode: vertical-rl;
+            margin-bottom: 100px;
+            overflow: hidden;
+            /* display: none; */
+            /* Set a fixed height or as per your design needs */
+        }
+
+        /* Show the description scrollbar when the portfolio-item is hovered */
+        /* .portfolio-item:hover+.portfolio-description {
+            display: block;
+        } */
+
+        .description-text {
+            animation: scroll 10s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <!-- Portfolio titles and descriptions -->
+            <!-- ... -->
+        </div>
+        <div class="image-preview" id="imagePreview"></div>
+    </div>
+
+    <script>
+        function showImage(portfolio) {
+            var imageUrl = {
+                'portfolio1': 'https://source.unsplash.com/1600x900/?nature,water',
+                'portfolio2': 'https://source.unsplash.com/1600x900/?city,night',
+                'portfolio3': 'https://source.unsplash.com/1600x900/?city,night',
+                'portfolio4': 'https://source.unsplash.com/1600x900/?city,night',
+                'portfolio5': 'https://source.unsplash.com/1600x900/?city,night',
+                'portfolio6': 'https://source.unsplash.com/1600x900/?city,night',
+            };
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
+            imagePreview.style.display = 'block'; // Show the image box
+        }
+
+        function hideImage() {
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.style.display = 'none'; // Hide the image box
+        }
+
+        // Portfolio items with their mouse event handlers
+        const portfolioItems = [
+            { id: 'portfolio1', title: 'Monolab', description: 'Creative WordPress solutions...' },
+            { id: 'portfolio2', title: 'Two', description: 'Two things are happening.' },
+    { id: 'portfolio3', title: 'Three', description: 'three things are happening.' },
+    { id: 'portfolio4', title: 'Four', description: 'four things are happening.' },
+    { id: 'portfolio5', title: 'Five', description: 'five things are happening.' },
+    { id: 'portfolio6', title: 'Six', description: 'six things are happening.' }
+        ];
+
+        const sidebar = document.querySelector('.sidebar');
+
+        portfolioItems.forEach(item => {
+            const title = document.createElement('div');
+            title.className = 'portfolio-item';
+            title.textContent = item.title;
+            title.onmouseenter = () => showImage(item.id);
+            title.onmouseleave = hideImage;
+            sidebar.appendChild(title);
+
+            const description = document.createElement('div');
+            description.className = 'portfolio-description';
+            description.innerHTML = `<div class="description-text">${item.description}</div>`;
+            sidebar.appendChild(description);
+        });
+    </script>
+
+</body>
+
+</html>
