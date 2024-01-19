@@ -28,17 +28,21 @@
         }
 
         .sidebar {
-            width: 50%;
+            background-color: blanchedalmond;
+            width: 10%;
             /* Sidebar takes up half the width */
             min-height: 100vh;
-            position: fixed;
+            max-height: 100vh;
+            position: relative;
+            /* position: fixed;
             left: 0;
-            top: 0;
+            top: 0; */
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             /* Align portfolio titles to the right */
             padding: 20px;
+            overflow-y: auto; 
         }
 
         .image-preview {
@@ -53,6 +57,24 @@
             transition: background-image 0.5s ease-in-out;
             display: none;
             /* Hidden by default */
+        }
+
+        .bigtext-preview {
+            background-color: grey;
+            width: 40%;
+            min-height: 100vh;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out;
+            /* display: none; */
+            /* Hidden by default */
+        }
+
+
+        .portfolio-item-container{
+            width: 100%;
+            flex-direction: row;
         }
 
         .portfolio-item {
@@ -100,6 +122,7 @@
 <body>
 
     <div class="container">
+        <div class="bigtext-preview" id="bigTextPreview">Hello</div>
         <div class="sidebar">
             <!-- Portfolio titles and descriptions -->
             <!-- ... -->
@@ -108,49 +131,60 @@
     </div>
 
     <script>
-        function showImage(portfolio) {
+        function showImageAnBigText(portfolio) {
             var imageUrl = {
-                'portfolio1': 'https://source.unsplash.com/1600x900/?nature,water',
-                'portfolio2': 'https://source.unsplash.com/1600x900/?city,night',
-                'portfolio3': 'https://source.unsplash.com/1600x900/?city,night',
-                'portfolio4': 'https://source.unsplash.com/1600x900/?city,night',
-                'portfolio5': 'https://source.unsplash.com/1600x900/?city,night',
-                'portfolio6': 'https://source.unsplash.com/1600x900/?city,night',
+                'portfolio1': 'images/P1.png',
+                'portfolio2': 'images/P2.png',
+                'portfolio3': 'images/P3.png',
+                'portfolio4': 'images/P4.png',
+                'portfolio5': 'images/P5A.png',
+                'portfolio6': 'images/P6.png',
             };
             var imagePreview = document.getElementById('imagePreview');
             imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
             imagePreview.style.display = 'block'; // Show the image box
+            // var bigTextPreview = document.getElementById('bigTextPreview');
+            // bigTextPreview.textContent = `url('${portfolioItems[bigtext]}')`; 
+            // imagePreview.style.display = 'block'; 
         }
 
-        function hideImage() {
-            var imagePreview = document.getElementById('imagePreview');
-            imagePreview.style.display = 'none'; // Hide the image box
-        }
+            // function hideImageAndBigText() {
+            //     var imagePreview = document.getElementById('imagePreview');
+            //     imagePreview.style.display = 'none'; // Hide the image box
+            //     // var bigTextPreview = document.getElementById('bigTextPreview');
+            //     // bigTextPreview.style.display = 'none'; // Hide the image box;
+            // }
 
         // Portfolio items with their mouse event handlers
         const portfolioItems = [
-            { id: 'portfolio1', title: 'Monolab', description: 'Creative WordPress solutions...' },
-            { id: 'portfolio2', title: 'Two', description: 'Two things are happening.' },
-    { id: 'portfolio3', title: 'Three', description: 'three things are happening.' },
-    { id: 'portfolio4', title: 'Four', description: 'four things are happening.' },
-    { id: 'portfolio5', title: 'Five', description: 'five things are happening.' },
-    { id: 'portfolio6', title: 'Six', description: 'six things are happening.' }
+            { id: 'portfolio1', title: 'Monolab', description: 'Creative WordPress solutions...', bigtext: 'oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone' },
+            { id: 'portfolio2', title: 'Two', description: 'Two things are happening.' , bigtext: 'two,two,two,two,two,two,two,two'},
+            { id: 'portfolio3', title: 'Three', description: 'three things are happening.' , bigtext: 'three,two,two,two,two,two,two,two'},
+            { id: 'portfolio4', title: 'Four', description: 'four things are happening.' , bigtext: 'four,two,two,two,two,two,two,two'},
+            { id: 'portfolio5', title: 'Five', description: 'five things are happening.', bigtext: 'five,two,two,two,two,two,two,two' },
+            { id: 'portfolio6', title: 'Six', description: 'six things are happening.',bigtext: 'six,two,two,two,two,two,two,two' }
         ];
 
         const sidebar = document.querySelector('.sidebar');
 
         portfolioItems.forEach(item => {
+            const portfolio_container = document.createElement('div');
+            portfolio_container.className = 'portfolio-container';
+
             const title = document.createElement('div');
             title.className = 'portfolio-item';
             title.textContent = item.title;
-            title.onmouseenter = () => showImage(item.id);
-            title.onmouseleave = hideImage;
-            sidebar.appendChild(title);
+            title.onmouseenter = () => showImageAnBigText(item.id);
+            // title.onmouseleave = hideImageAndBigText;
+            
 
             const description = document.createElement('div');
             description.className = 'portfolio-description';
             description.innerHTML = `<div class="description-text">${item.description}</div>`;
-            sidebar.appendChild(description);
+            
+            portfolio_container.appendChild(title);
+            portfolio_container.appendChild(description);
+            sidebar.appendChild(portfolio_container);
         });
     </script>
 
