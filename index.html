@@ -72,9 +72,10 @@
         }
 
 
-        .portfolio-item-container{
-            width: 100%;
-            flex-direction: row;
+        .portfolio-container{
+            width: 15vh;
+            height: 30vh;
+            padding-bottom: 10px;
         }
 
         .portfolio-item {
@@ -85,16 +86,23 @@
             padding-left: 50px;
             cursor: pointer;
             transform: rotate(-90deg);
-            transform-origin: right bottom;
-            white-space: nowrap;
+            transform-origin: bottom;
+            /* white-space: nowrap; */
+            /* text-wrap: wrap; */
+
+            width: 30vh;
+            max-height: 10vh;
         }
 
         .portfolio-description {
             writing-mode: vertical-rl;
-            margin-bottom: 100px;
+            /* margin-bottom: 100px; */
+            height: 100%;
             overflow: hidden;
+
             /* display: none; */
             /* Set a fixed height or as per your design needs */
+
         }
 
         /* Show the description scrollbar when the portfolio-item is hovered */
@@ -157,12 +165,12 @@
 
         // Portfolio items with their mouse event handlers
         const portfolioItems = [
-            { id: 'portfolio1', title: 'Monolab', description: 'Creative WordPress solutions...', bigtext: 'oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone' },
-            { id: 'portfolio2', title: 'Two', description: 'Two things are happening.' , bigtext: 'two,two,two,two,two,two,two,two'},
-            { id: 'portfolio3', title: 'Three', description: 'three things are happening.' , bigtext: 'three,two,two,two,two,two,two,two'},
-            { id: 'portfolio4', title: 'Four', description: 'four things are happening.' , bigtext: 'four,two,two,two,two,two,two,two'},
-            { id: 'portfolio5', title: 'Five', description: 'five things are happening.', bigtext: 'five,two,two,two,two,two,two,two' },
-            { id: 'portfolio6', title: 'Six', description: 'six things are happening.',bigtext: 'six,two,two,two,two,two,two,two' }
+            { id: 'portfolio1', title: 'Transcarry', description: 'Design by Empathy.', bigtext: 'oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone' },
+            { id: 'portfolio2', title: 'Dogbeds', description: 'Design for environmental and social transformations' , bigtext: 'two,two,two,two,two,two,two,two'},
+            { id: 'portfolio3', title: 'Architech', description: 'Design Instruments for Architects' , bigtext: 'three,two,two,two,two,two,two,two'},
+            { id: 'portfolio4', title: 'Dunlop Golf Glove', description: 'Design With Style' , bigtext: 'four,two,two,two,two,two,two,two'},
+            { id: 'portfolio5', title: 'Winter in Chisnau', description: 'Design for Context', bigtext: 'five,two,two,two,two,two,two,two' },
+            { id: 'portfolio6', title: 'The Social Water Front', description: 'Design for Blend',bigtext: 'six,two,two,two,two,two,two,two' }
         ];
 
         const sidebar = document.querySelector('.sidebar');
@@ -178,12 +186,12 @@
             // title.onmouseleave = hideImageAndBigText;
             
 
-            const description = document.createElement('div');
-            description.className = 'portfolio-description';
-            description.innerHTML = `<div class="description-text">${item.description}</div>`;
+            // const description = document.createElement('div');
+            // description.className = 'portfolio-description';
+            // description.innerHTML = `<div class="description-text">${item.description}</div>`;
             
             portfolio_container.appendChild(title);
-            portfolio_container.appendChild(description);
+            // portfolio_container.appendChild(description);
             sidebar.appendChild(portfolio_container);
         });
     </script>
