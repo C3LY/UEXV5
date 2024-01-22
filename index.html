@@ -23,34 +23,45 @@
 
         /*  */
         .ticker-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    display: flex;
-    align-items: center; /* Center the ticker vertically */
-    justify-content: center; /* Center the ticker horizontally */
-    background-color:blueviolet; /* Assuming a dark background */
-  }
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* Full viewport height */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            /* Center the ticker vertically */
+            justify-content: center;
+            /* Center the ticker horizontally */
+            background-color: blueviolet;
+            /* Assuming a dark background */
+        }
 
-  .ticker-text {
-    position: absolute;
-    white-space: nowrap;
-    font-size: 60em; /* Adjust to match your screenshot */
-    color: rgb(133, 37, 37);
-    animation: ticker 50s linear infinite; /* Increased duration for slower movement */
-    letter-spacing: 0.05em; 
-    text-transform: capitalize;
-    
-}
+        .ticker-text {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 60em;
+            /* Adjust to match your screenshot */
+            color: rgb(133, 37, 37);
+            animation: ticker 50s linear infinite ;
+            /* Increased duration for slower movement */
+            letter-spacing: 0.05em;
+            text-transform:uppercase;
 
-  @keyframes ticker {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
+        }
+
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
 
-  /*  */
+        /*  */
 
         .container {
             display: flex;
@@ -73,9 +84,14 @@
             align-items: flex-end;
             /* Align portfolio titles to the right */
             padding: 20px;
-            overflow-y: auto; 
+            overflow-y: auto;
 
             z-index: 2;
+
+            -ms-overflow-style: none;
+            /* Internet Explorer 10+ */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
         .image-preview {
@@ -93,10 +109,12 @@
 
             /* ticker */
             position: absolute;
-    /* bottom: 10%; */
-    /* right: 10%; */
-    width: 45%; /* Adjust size as needed */
-    z-index: 2; /* Ensure image is above the text */
+            /* bottom: 10%; */
+            /* right: 10%; */
+            width: 45%;
+            /* Adjust size as needed */
+            z-index: 2;
+            /* Ensure image is above the text */
         }
 
         .bigtext-preview {
@@ -112,10 +130,10 @@
         }
 
 
-        .portfolio-container{
+        .portfolio-container {
             justify-content: space-evenly;
-                width: 30vh;
-        height: 30vh; 
+            width: 30vh;
+            height: 30vh;
             padding-bottom: 10px;
         }
 
@@ -139,8 +157,6 @@
             /* margin-bottom: 100px; */
             height: 100%;
             overflow: hidden;
-
-            /* display: none; */
             /* Set a fixed height or as per your design needs */
 
         }
@@ -170,7 +186,8 @@
 <body>
 
     <div class="container">
-        <div class="ticker-text">&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For Empathy&nbsp;&mdash;</div>
+        <div class="ticker-text" id="ticker-text">&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For
+            Empathy&nbsp;&mdash;</div>
         <div class="sidebar">
             <!-- Portfolio titles and descriptions -->
             <!-- ... -->
@@ -192,26 +209,37 @@
             var imagePreview = document.getElementById('imagePreview');
             imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
             imagePreview.style.display = 'block'; // Show the image box
+
             // var bigTextPreview = document.getElementById('bigTextPreview');
-            // bigTextPreview.textContent = `url('${portfolioItems[bigtext]}')`; 
-            // imagePreview.style.display = 'block'; 
+            // bigTextPreview.textContent = `url('${portfolioItems[bigtext]}')`;
+            // imagePreview.style.display = 'block';
+
+            var tickerText = document.getElementById('ticker-text');
+            console.log(portfolio);
+            console.log(portfolioItems);
+            console.log(portfolioItems.portfolio);
+            var textDescription = portfolioItems.find(x => x.id === portfolio).description;
+             
+
+            tickerText.innerHTML = (textDescription+" - ").repeat(2);
+
         }
 
-            // function hideImageAndBigText() {
-            //     var imagePreview = document.getElementById('imagePreview');
-            //     imagePreview.style.display = 'none'; // Hide the image box
-            //     // var bigTextPreview = document.getElementById('bigTextPreview');
-            //     // bigTextPreview.style.display = 'none'; // Hide the image box;
-            // }
+        // function hideImageAndBigText() {
+        //     var imagePreview = document.getElementById('imagePreview');
+        //     imagePreview.style.display = 'none'; // Hide the image box
+        //     // var bigTextPreview = document.getElementById('bigTextPreview');
+        //     // bigTextPreview.style.display = 'none'; // Hide the image box;
+        // }
 
         // Portfolio items with their mouse event handlers
         const portfolioItems = [
             { id: 'portfolio1', title: 'Transcarry', description: 'Design by Empathy.', bigtext: 'oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone' },
-            { id: 'portfolio2', title: 'Dogbeds', description: 'Design for environmental and social transformations' , bigtext: 'two,two,two,two,two,two,two,two'},
-            { id: 'portfolio3', title: 'Architech', description: 'Design Instruments for Architects' , bigtext: 'three,two,two,two,two,two,two,two'},
-            { id: 'portfolio4', title: 'Dunlop Golf Glove', description: 'Design With Style' , bigtext: 'four,two,two,two,two,two,two,two'},
+            { id: 'portfolio2', title: 'Dogbeds', description: 'Design for environmental and social transformations', bigtext: 'two,two,two,two,two,two,two,two' },
+            { id: 'portfolio3', title: 'Architech', description: 'Design Instruments for Architects', bigtext: 'three,two,two,two,two,two,two,two' },
+            { id: 'portfolio4', title: 'Dunlop Golf Glove', description: 'Design With Style', bigtext: 'four,two,two,two,two,two,two,two' },
             { id: 'portfolio5', title: 'Winter in Chisnau', description: 'Design for Context', bigtext: 'five,two,two,two,two,two,two,two' },
-            { id: 'portfolio6', title: 'The Social Water Front', description: 'Design for Blend',bigtext: 'six,two,two,two,two,two,two,two' }
+            { id: 'portfolio6', title: 'The Social Water Front', description: 'Design for Blend', bigtext: 'six,two,two,two,two,two,two,two' }
         ];
 
         const sidebar = document.querySelector('.sidebar');
@@ -225,14 +253,14 @@
             title.textContent = item.title;
             title.onmouseenter = () => showImageAnBigText(item.id);
             // title.onmouseleave = hideImageAndBigText;
-            
 
-            // const description = document.createElement('div');
-            // description.className = 'portfolio-description';
-            // description.innerHTML = `<div class="description-text">${item.description}</div>`;
-            
+
+            const description = document.createElement('div');
+            description.className = 'portfolio-description';
+            description.innerHTML = `<div class="description-text">${item.description}</div>`;
+
             portfolio_container.appendChild(title);
-            // portfolio_container.appendChild(description);
+            portfolio_container.appendChild(description);
             sidebar.appendChild(portfolio_container);
         });
     </script>
