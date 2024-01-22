@@ -21,6 +21,37 @@
             /* White background */
         }
 
+        /*  */
+        .ticker-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center the ticker vertically */
+    justify-content: center; /* Center the ticker horizontally */
+    background-color:blueviolet; /* Assuming a dark background */
+  }
+
+  .ticker-text {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 60em; /* Adjust to match your screenshot */
+    color: rgb(133, 37, 37);
+    animation: ticker 50s linear infinite; /* Increased duration for slower movement */
+    letter-spacing: 0.05em; 
+    text-transform: capitalize;
+    
+}
+
+  @keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+
+  /*  */
+
         .container {
             display: flex;
             align-items: flex-start;
@@ -28,8 +59,8 @@
         }
 
         .sidebar {
-            background-color: blanchedalmond;
-            width: 10%;
+            background-color: rgb(255, 255, 255, 0.5);
+            justify-content: space-between;
             /* Sidebar takes up half the width */
             min-height: 100vh;
             max-height: 100vh;
@@ -43,25 +74,34 @@
             /* Align portfolio titles to the right */
             padding: 20px;
             overflow-y: auto; 
+
+            z-index: 2;
         }
 
         .image-preview {
-            width: 50%;
+            /* width: 50%; */
             /* Image preview takes up the other half */
-            min-height: 100vh;
+            height: 90vh;
             position: fixed;
-            right: 0;
-            top: 0;
+            right: 5vh;
+            top: 5vh;
             background-size: cover;
             background-position: center;
             transition: background-image 0.5s ease-in-out;
             display: none;
             /* Hidden by default */
+
+            /* ticker */
+            position: absolute;
+    /* bottom: 10%; */
+    /* right: 10%; */
+    width: 45%; /* Adjust size as needed */
+    z-index: 2; /* Ensure image is above the text */
         }
 
         .bigtext-preview {
-            background-color: grey;
-            width: 40%;
+            background-color: rgb(255, 255, 255, 0.5);
+            width: 35%;
             min-height: 100vh;
             position: relative;
             background-size: cover;
@@ -73,20 +113,20 @@
 
 
         .portfolio-container{
-            width: 15vh;
-            height: 30vh;
+            justify-content: space-evenly;
+                width: 30vh;
+        height: 30vh; 
             padding-bottom: 10px;
         }
 
         .portfolio-item {
             font-size: 48px;
-            font-weight: 900;
+            font-weight: 300;
             margin: 20px 0;
             padding-bottom: 10px;
-            padding-left: 50px;
+            padding-right: 20px;
+            text-align: right;
             cursor: pointer;
-            transform: rotate(-90deg);
-            transform-origin: bottom;
             /* white-space: nowrap; */
             /* text-wrap: wrap; */
 
@@ -130,11 +170,12 @@
 <body>
 
     <div class="container">
-        <div class="bigtext-preview" id="bigTextPreview">Hello</div>
+        <div class="ticker-text">&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For Empathy&nbsp;&mdash;</div>
         <div class="sidebar">
             <!-- Portfolio titles and descriptions -->
             <!-- ... -->
         </div>
+        <div class="bigtext-preview" id="bigTextPreview"></div>
         <div class="image-preview" id="imagePreview"></div>
     </div>
 
