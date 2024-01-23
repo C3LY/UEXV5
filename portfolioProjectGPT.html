@@ -1,0 +1,155 @@
+<!-- GPT Recreate this screenshot, it is a portfolio project page. The title is big on the left bottom side of the screen, a huge background image is behind it that overflows down, when you scroll down, there is text as shown in the second screenshot,moving down there is a video , when you scroll down further you get a text page as shown in fourth image
+To create a portfolio project page similar to the screenshots you've provided, we will need to structure the HTML to have a large title on the left with an oversized background image, a scrolling text section, a video section, and a final text page. Here's a prototype layout using HTML and CSS: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .section {
+      position: relative;
+      width: 100%;
+    }
+
+    .title-section {
+      height: 100vh;
+      background: url(images/P1.png) no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 10%;
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 10vw;
+      color: white;
+    }
+
+    .scrolling-text-section,
+    .final-text-section {
+      /* padding: 50px 10%; */
+      background: #fff;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    .video-section {
+      background: #000;
+      /* margin: 50px 10%; */
+      min-height: 50vh;
+      max-width: 100vw;
+      color: white;
+    }
+
+    .video-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+    }
+
+    /* --- */
+
+    .header {
+      font-size: 1.5em;
+      /* Large font size for the header */
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 20px 50px;
+      /* Padding around the header */
+      background-color: #f2f2f2;
+      /* Background color for the header section */
+      letter-spacing: 1px;
+    }
+
+    .content {
+      display: flex;
+      padding: 20px 50px;
+      /* Padding around the content */
+    }
+
+    .left-column {
+      font-size: 0.8em;
+      /* Smaller font size for the left column */
+      padding-right: 10%;
+      /* Space between the columns */
+      flex: 1;
+      /* Take up 1/3 of the content space */
+      color: #555;
+      /* Darker text color for the left column */
+    }
+
+    .right-column {
+      font-size: 2em;
+      /* Larger font size for the right column */
+      flex: 2;
+      /* Take up 2/3 of the content space */
+      line-height: 1.2;
+      color: #333;
+      /* Dark text color */
+    }
+
+    .context-link {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="section title-section">
+    <div class="title">WATERHOUSE CHARTERS</div>
+  </div>
+
+  <div class="section scrolling-text-section">
+    <p>Waterhouse Charters set sail in 2022 to create exclusive, memorable boating experiences for luxury leisure
+      seekers in Grand Cayman. We were tasked with creating a distinct visual identity that would define the brand as
+      the premium option within the industry.</p>
+  </div>
+
+  <div class="section video-section">
+    <div class="video-container">
+      <!-- Embed your video here -->
+      <video src="path-to-your-video.mp4" controls></video>
+    </div>
+  </div>
+
+
+  <div class="header">Context</div>
+
+  <div class="content">
+    <div class="left-column">
+      Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+      crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+      appeal of the premium vessel.
+      <br><br>
+      <a href="#book" class="context-link">Book your luxury charter.</a>
+    </div>
+    <div class="right-column">
+      The premium boat charter experience in the Cayman Islands required a premium brand that stood out from the rest.
+    </div>
+  </div>
+
+  </div>
+
+</body>
+
+</html>
