@@ -21,6 +21,14 @@
             /* White background */
         }
 
+        h1{
+            font-size: 2em;
+            padding-left: 30px;
+            padding-top:20px;
+            font-weight: 300;
+
+        }
+
         /*  */
         .ticker-container {
             position: relative;
@@ -41,6 +49,7 @@
             position: absolute;
             white-space: nowrap;
             font-size: 60em;
+            font-weight: 100;
             /* Adjust to match your screenshot */
             color: rgb(133, 37, 37);
             animation: ticker 50s linear infinite ;
@@ -67,6 +76,27 @@
             display: flex;
             align-items: flex-start;
             min-height: 100vh;
+            max-height: 100vh;
+            overflow: clip;
+        }
+
+        .left-ticker {
+            margin-left: 5vh;
+            background-color: rgba(255, 255, 255, 0.5);
+            writing-mode: vertical-rl;
+            /* margin-bottom: 100px; */
+            height:max-content;
+            overflow: hidden;
+            word-spacing: 10px;
+            font-size: large;
+            /* Set a fixed height or as per your design needs */
+
+        }
+
+        .left-ticker-text {
+            animation: scroll 50s linear infinite;
+            display: inline-block;
+            
         }
 
         .sidebar {
@@ -74,7 +104,7 @@
             justify-content: space-between;
             /* Sidebar takes up half the width */
             min-height: 100vh;
-            max-height: 100vh;
+            max-height: 80vh;
             position: relative;
             /* position: fixed;
             left: 0;
@@ -84,7 +114,7 @@
             align-items: flex-end;
             /* Align portfolio titles to the right */
             padding: 20px;
-            overflow-y: auto;
+            overflow: hidden;
 
             z-index: 2;
 
@@ -119,11 +149,24 @@
 
         .bigtext-preview {
             background-color: rgb(255, 255, 255, 0.5);
-            width: 35%;
-            min-height: 100vh;
+            width: 25%;
+            min-height: 90vh;
             position: relative;
             background-size: cover;
             background-position: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: 100;
+            font-style: italic;
+            padding: 5%;
+            	/* Use a flexbox layout */
+	display: flex;
+	
+	/* Make a horizontal flexbox (the default) */
+	flex-direction: row;
+	
+	/* The important part: vertically center the items */
+	align-items: center;
             transition: background-image 0.5s ease-in-out;
             /* display: none; */
             /* Hidden by default */
@@ -131,34 +174,40 @@
 
 
         .portfolio-container {
-            justify-content: space-evenly;
-            width: 30vh;
-            height: 30vh;
+            /* justify-content: space-evenly; */
+            width: 40vh;
+            height: 25vh;
             padding-bottom: 10px;
+            justify-content: right;
         }
 
         .portfolio-item {
             font-size: 48px;
             font-weight: 300;
-            margin: 20px 0;
-            padding-bottom: 10px;
+            /* margin: 20px 0; */
+            /* padding-top: 10%; */
             padding-right: 20px;
-            text-align: right;
+            text-align: right;  
             cursor: pointer;
             /* white-space: nowrap; */
             /* text-wrap: wrap; */
 
-            width: 30vh;
+            width: 100%;
             max-height: 10vh;
         }
 
-        .portfolio-description {
-            writing-mode: vertical-rl;
+        /* .portfolio-description { */
+            /* writing-mode: vertical-rl; */
             /* margin-bottom: 100px; */
-            height: 100%;
-            overflow: hidden;
+            /* height: 100%; */
+            /* overflow: hidden; */
             /* Set a fixed height or as per your design needs */
+        /* } */
 
+        .portfolio-symbol {
+            padding-left: 10px;
+            max-height: 5vh;
+            max-width: 5vh;
         }
 
         /* Show the description scrollbar when the portfolio-item is hovered */
@@ -184,69 +233,83 @@
 </head>
 
 <body>
-
+    <h1>UEX Portfolio</h1>
     <div class="container">
-        <div class="ticker-text" id="ticker-text">&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For
-            Empathy&nbsp;&mdash;</div>
+        <!-- <div class="ticker-text" id="ticker-text">&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For UEX&nbsp;&mdash;&nbsp;Design For
+            Empathy&nbsp;&mdash;</div> -->
+            <div class="left-ticker">
+                <div class="left-ticker-text"> <span id="portfolio1">Design For Empathy</span> - <span id="portfolio2">Designn for Environmental and Social Transformations</span>  - <span id="portfolio3">Design Instruments for Architects</span> - <span id="portfolio4">Design With Style</span> - <span id="portfolio5">Design for Context</span> - <span id="portfolio6">Design for Blend</span></div>
+            </div>
         <div class="sidebar">
             <!-- Portfolio titles and descriptions -->
             <!-- ... -->
         </div>
-        <div class="bigtext-preview" id="bigTextPreview"></div>
+        <div class="bigtext-preview" id="bigTextPreview">UEX is the module of the future</div>
         <div class="image-preview" id="imagePreview"></div>
     </div>
 
     <script>
+                // Portfolio items with their mouse event handlers
+                const portfolioItems = [
+            { id: 'portfolio1', title: 'Transcarry', description: 'Design by Empathy.', imageURL: 'url(images/P1.png)', symbolURL: 'symbols/P1.svg', bigtext: 'Shopping that waits for you where you need it'},
+            { id: 'portfolio2', title: 'Dogbeds', description: 'Design for Environmental and Social Transformations',imageURL: 'url(images/P2.png)', symbolURL: 'symbols/P2.svg', bigtext: 'Crafting personalized pet comfort from recycled fabrics' },
+            { id: 'portfolio3', title: 'Architech', description: 'Design Instruments for Architects', imageURL: 'url(images/P3.png)',symbolURL: 'symbols/P3.svg', bigtext: 'Elevating Design with flawless plans from concepts - visible and automatically correct' },
+            { id: 'portfolio4', title: 'Dunlop Golf Glove', description: 'Design With Style', imageURL: 'url(images/P4.png)', symbolURL: 'symbols/P4.svg',bigtext: 'A stylish recovery inspired' },
+            { id: 'portfolio5', title: 'Winter in Chisnau', description: 'Design for Context', imageURL: 'url(images/P5A.png)',symbolURL: 'symbols/P5.svg', bigtext: 'Improving the city, improving dog welfare' },
+            { id: 'portfolio6', title: 'The Social Water Front', description: 'Design for Blend', imageURL: 'url(images/P6.png)', symbolURL: 'symbols/P6.svg',bigtext: 'Merging into Lausanne with Nordic-Inspired Social Space' }
+        ];
         function showImageAnBigText(portfolio) {
-            var imageUrl = {
-                'portfolio1': 'images/P1.png',
-                'portfolio2': 'images/P2.png',
-                'portfolio3': 'images/P3.png',
-                'portfolio4': 'images/P4.png',
-                'portfolio5': 'images/P5A.png',
-                'portfolio6': 'images/P6.png',
-            };
+            // var imageUrl = {
+            //     'portfolio1': 'images/P1.png',
+            //     'portfolio2': 'images/P2.png',
+            //     'portfolio3': 'images/P3.png',
+            //     'portfolio4': 'images/P4.png',
+            //     'portfolio5': 'images/P5A.png',
+            //     'portfolio6': 'images/P6.png',
+            // };
             var imagePreview = document.getElementById('imagePreview');
-            imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
+            // imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
+            console.log(portfolioItems.find(x => x.id === portfolio).imageURL);
+            var tempImageURL = (portfolioItems.find(x => x.id === portfolio).imageURL);
+            imagePreview.style.backgroundImage = tempImageURL;
             imagePreview.style.display = 'block'; // Show the image box
 
-            // var bigTextPreview = document.getElementById('bigTextPreview');
-            // bigTextPreview.textContent = `url('${portfolioItems[bigtext]}')`;
-            // imagePreview.style.display = 'block';
 
-            var tickerText = document.getElementById('ticker-text');
-            console.log(portfolio);
-            console.log(portfolioItems);
-            console.log(portfolioItems.portfolio);
-            var textDescription = portfolioItems.find(x => x.id === portfolio).description;
+            portfolioItems.forEach(element => document.getElementById(element.id).style.color = 'black');
+
+
+            var textSpan = document.getElementById(portfolio);
+            textSpan.style.color = 'red';
+
+            var bigTextPreview = document.getElementById('bigTextPreview');
+            bigTextPreview.textContent = (portfolioItems.find(x => x.id === portfolio).bigtext);
+            imagePreview.style.display = 'block';
+
+            // var tickerText = document.getElementById('ticker-text');
+            // var textDescription = portfolioItems.find(x => x.id === portfolio).description;
              
 
-            tickerText.innerHTML = (textDescription+" - ").repeat(2);
+            // tickerText.innerHTML = (textDescription+" - ").repeat(2);
 
         }
 
         // function hideImageAndBigText() {
-        //     var imagePreview = document.getElementById('imagePreview');
-        //     imagePreview.style.display = 'none'; // Hide the image box
+        //     // var imagePreview = document.getElementById('imagePreview');
+        //     // imagePreview.style.display = 'none'; // Hide the image box
         //     // var bigTextPreview = document.getElementById('bigTextPreview');
         //     // bigTextPreview.style.display = 'none'; // Hide the image box;
         // }
 
-        // Portfolio items with their mouse event handlers
-        const portfolioItems = [
-            { id: 'portfolio1', title: 'Transcarry', description: 'Design by Empathy.', bigtext: 'oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone' },
-            { id: 'portfolio2', title: 'Dogbeds', description: 'Design for environmental and social transformations', bigtext: 'two,two,two,two,two,two,two,two' },
-            { id: 'portfolio3', title: 'Architech', description: 'Design Instruments for Architects', bigtext: 'three,two,two,two,two,two,two,two' },
-            { id: 'portfolio4', title: 'Dunlop Golf Glove', description: 'Design With Style', bigtext: 'four,two,two,two,two,two,two,two' },
-            { id: 'portfolio5', title: 'Winter in Chisnau', description: 'Design for Context', bigtext: 'five,two,two,two,two,two,two,two' },
-            { id: 'portfolio6', title: 'The Social Water Front', description: 'Design for Blend', bigtext: 'six,two,two,two,two,two,two,two' }
-        ];
 
         const sidebar = document.querySelector('.sidebar');
 
         portfolioItems.forEach(item => {
             const portfolio_container = document.createElement('div');
             portfolio_container.className = 'portfolio-container';
+
+            let symbolP = new Image();
+            symbolP.className = 'portfolio-symbol';
+            symbolP.src = item.symbolURL;
 
             const title = document.createElement('div');
             title.className = 'portfolio-item';
@@ -255,12 +318,13 @@
             // title.onmouseleave = hideImageAndBigText;
 
 
-            const description = document.createElement('div');
-            description.className = 'portfolio-description';
-            description.innerHTML = `<div class="description-text">${item.description}</div>`;
+            // const description = document.createElement('div');
+            // description.className = 'portfolio-description';
+            // description.innerHTML = `<div class="description-text">${item.description}</div>`;
 
+            portfolio_container.appendChild(symbolP);
             portfolio_container.appendChild(title);
-            portfolio_container.appendChild(description);
+            // portfolio_container.appendChild(description);
             sidebar.appendChild(portfolio_container);
         });
     </script>
