@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction Aware Hover Effect</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+  }
+  .card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    overflow: hidden;
+    background-color: #ddd;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+</style>
+</head>
+<body>
+
+<div class="card" data-direction="">
+  <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+  <div class="info">Card Text 1</div>
+</div>
+<div class="card" data-direction="">
+  <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+  <div class="info">Card Text 2</div>
+</div>
+<div class="card" data-direction="">
+  <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+  <div class="info">Card Text 3</div>
+</div>
+<div class="card" data-direction="">
+  <img src="https://via.placeholder.com/200x300" alt="Placeholder">
+  <div class="info">Card Text 4</div>
+</div>
+
+<script>
+  document.querySelectorAll('.card').forEach(function(card) {
+    card.addEventListener('mouseenter', function(event) {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+      let direction = '';
+      const slope = h / w;
+      if(y < slope * x && y < -slope * x + h) {
+        direction = 'top';
+      } else if(y < slope * x && y > -slope * x + h) {
+        direction = 'right';
+      } else if(y > slope * x && y < -slope * x + h) {
+        direction = 'left';
+      } else {
+        direction = 'bottom';
+      }
+      const info = card.querySelector('.info');
+      info.style.opacity = 1;
+      info.style.transform = 'none';
+      card.setAttribute('data-direction', direction);
+    });
+
+    card.addEventListener('mouseleave', function(event) {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+      let direction = '';
+      const slope = h / w;
+      if(y < slope * x && y < -slope * x + h) {
+        direction = 'top';
+      } else if(y < slope * x && y > -slope * x + h) {
+        direction = 'right';
+      } else if(y > slope * x && y < -slope * x + h) {
+        direction = 'left';
+      } else {
+        direction = 'bottom';
+      }
+      const info = card.querySelector('.info');
+      info.style.opacity = 0;
+      if(direction === 'top') {
+        info.style.transform = 'translateY(-100%)';
+      } else if(direction === 'right') {
+        info.style.transform = 'translateX(100%)';
+      } else if(direction === 'left') {
+        info.style.transform = 'translateX(-100%)';
+      } else {
+        info.style.transform = 'translateY(100%)';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

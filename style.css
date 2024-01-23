@@ -159,6 +159,7 @@ h1{
 
 .bigtext-preview {
     background-color: rgb(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 12px 6px #fff;
     width: 25%;
     min-height: 90vh;
     position: relative;

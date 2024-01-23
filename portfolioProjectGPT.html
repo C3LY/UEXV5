@@ -9,6 +9,12 @@ To create a portfolio project page similar to the screenshots you've provided, w
   <title>Portfolio Project</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
   <style>
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+      /* make scrollbar transparent */
+    }
+
     body,
     html {
       margin: 0;
@@ -20,6 +26,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
     .section {
       position: relative;
       width: 100%;
+
     }
 
     .title-section {
@@ -31,6 +38,14 @@ To create a portfolio project page similar to the screenshots you've provided, w
       align-items: flex-end;
       padding: 0 10%;
       box-sizing: border-box;
+
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+
+    .title-section:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
     }
 
     .title {
@@ -40,13 +55,63 @@ To create a portfolio project page similar to the screenshots you've provided, w
       color: white;
     }
 
-    .scrolling-text-section,
+    .logo {
+      height: 5vh;
+      font-size: 1em;
+      padding-left: 30px;
+      padding-top: 20px;
+      padding-right: 5px;
+      font-weight: 300;
+
+      position: fixed;
+      top: 0;
+      display: flex;
+      z-index: 100;
+    }
+
+    .nav-side {
+      position: fixed;
+      z-index: 1;
+      transition: 0.5s;
+
+      /* padding-top: 100px; no need when position fixed*/
+      padding-right: 20px;
+
+      margin-top: 10vh;
+      margin-left: 10vh;
+      /* background-color: rgba(48, 167, 202, 0.5); */
+      writing-mode: vertical-rl;
+      /* margin-bottom: 100px; */
+      height: 80vh;
+      flex-wrap: wrap;
+      word-spacing: 10px;
+      font-size: medium;
+
+      width: 0;
+    }
+
+    .nav-side .closebtn {
+      /* position: absolute; */
+      /* top: 0; */
+      /* right: 25px; */
+      font-size: 20px;
+      /* margin-left: 80px; */
+      padding: 10px;
+    }
+
+
+    .title-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* .scrolling-text-section,
     .final-text-section {
-      /* padding: 50px 10%; */
+      /* padding: 50px 10%; 
       background: #fff;
       color: #333;
       min-height: 100vh;
-    }
+    } */
 
     /* .video-section {
       background: #000;
@@ -75,7 +140,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       font-size: 2.5em;
       /* Large font size for the header */
       text-transform: uppercase;
-      padding: 20px 50px;
+      padding: 50px 50px;
       /* Padding around the header */
       /* background-color: #f2f2f2; */
       /* Background color for the header section */
@@ -118,56 +183,129 @@ To create a portfolio project page similar to the screenshots you've provided, w
       /* Dark text color */
     }
 
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      /* Maximum image width */
+      opacity: 0;
+      transform: translate3d(0, 80px, 0);
+      /* Start 50 pixels down */
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+      will-change: opacity, transform;
+
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+    }
+
+    img:hover {
+      filter: none;
+      -webkit-filter: grayscale(0);
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      /* End at the original position */
+    }
+
     .context-link {
       color: #000;
       text-decoration: none;
       font-weight: bold;
     }
 
-    h1 {
-      height: 10vh;
-      font-size: 1em;
-      padding-left: 30px;
-      padding-top: 20px;
-      font-weight: 300;
+    a {
+      color: black;
+      text-decoration: none;
+      /* no underline */
     }
 
-    .nav-side {
-      padding-right: 20px;
-      margin-left: 5vh;
-      /* background-color: rgba(48, 167, 202, 0.5); */
-      writing-mode: vertical-rl;
-      /* margin-bottom: 100px; */
-      height: 80vh;
-      flex-wrap: wrap;
-      word-spacing: 10px;
-      font-size: medium;
+    a:hover {
+      color: red;
+      text-decoration-line: underline;
     }
 
-    .title-container {
+    /* parallax section */
+    .parallax-container {
       display: flex;
-      justify-content: space-between;
-      /* align-items: stretch; */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
     }
+
+    .parallax-text {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 5rem;
+      font-weight: 800;
+      color: #6868689a;
+      z-index: -1;
+      pointer-events: none;
+      text-align: right;
+      width: 30%;
+      /* Adjust the width as necessary */
+      max-width: fit-content;
+      /* Adjust max-width as necessary for responsiveness */
+    }
+
+    .image-container {
+      position: relative;
+      width: 80vh;
+      /* Assuming the image is square */
+      height: 80vh;
+      background-size: cover;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .parallax-text {
+        font-size: 3rem;
+      }
+
+      .image-container {
+        width: 50vh;
+        height: 50vh;
+      }
+    }
+
+    /*  */
+
+    .experienceText {
+      text-align: left;
+      max-width: 40vw;
+    }
+
+    /* cards */
+    
   </style>
 </head>
 
 <body>
 
-  <h1>UEX Portfolio</h1>
+  <a href="index.html">
+    <h1 class="logo" onmouseenter="openNav()"> &lt; UEX Portfolio</h1>
+  </a>
+  <nav class="nav-side" id="nav-side" onmouseleave="closeNav()">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> <span>&times; </span> </a>
+    <a href="ProjectPages/P1.html"> <span id="portfolio1">Design For Empathy</span> </a> - 
+    <a href="ProjectPages/P2.html"> <span id="portfolio2">Design For Environmental and Social Transformations</span> </a> - 
+    <a href="ProjectPages/P3.html"> <span id="portfolio3">Design Instruments for Architects</span> </a> - 
+    <a href="ProjectPages/P4.html"> <span id="portfolio4">Design With Style</span> </a> - 
+    <a href="ProjectPages/P5.html"> <span id="portfolio5">Design For Context</span> </a> -
+    <a href="ProjectPages/P6.html"> <span id="portfolio6">Design For Blend</span> </a>
+  </nav>
 
   <div class="title-container">
-    <nav class="nav-side">
-      <span id="portfolio1">Design For Empathy</span> - <span id="portfolio2">Designn for
-        Environmental and Social Transformations</span> - <span id="portfolio3">Design Instruments for Architects</span>
-      - <span id="portfolio4">Design With Style</span> - <span id="portfolio5">Design for Context</span> - <span
-        id="portfolio6">Design for Blend</span>
-    </nav>
     <div class="section title-section">
       <div class="title">Transcarry</div>
     </div>
   </div>
 
+  <!-- Project Description -->
   <div class="header">Project Description</div>
   <div class="content">
 
@@ -180,10 +318,83 @@ To create a portfolio project page similar to the screenshots you've provided, w
     </div>
 
     <div class="right-column">
-      The premium boat charter experience in the Cayman Islands required a premium brand that stood out from the rest.
+      <img id="floatImage" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
+    </div>
+  </div>
+
+  <!-- The Process -->
+  <div class="header">The Process</div>
+  <div class="content">
+
+    <div class="left-column">
+      Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+      crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+      appeal of the premium vessel.
+      <br><br>
     </div>
 
+    <div class="right-column">
+      Blah blah blah
+    </div>
   </div>
+
+  <div class="parallax-container">
+    <div class="image-container" style="background: url('https://source.unsplash.com/random') no-repeat center;"></div>
+    <div style="display: inline-block;">
+      <div class="parallax-text" aria-hidden="true">One Two Three Four Five</div>
+    </div>
+  </div>
+
+  <!-- Experience and Opinion-->
+  <div class="header">My Experience and Opinion</div>
+  <div class="content experienceText">
+
+    Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+    crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+    appeal of the premium vessel.
+    <br><br>
+
+  </div>
+
+
+  <script>
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+
+    function checkVisibility() {
+      const img = document.getElementById('floatImage');
+      if (isInViewport(img)) {
+        img.classList.add('visible');
+      } else {
+        img.classList.remove('visible');
+      }
+    }
+
+    /* Set the width of the sidebar to 250px (show it) */
+    function openNav() {
+      var navbar = document.getElementById("nav-side");
+      navbar.style.width = "10px";
+      navbar.style.opacity = "100";
+    }
+
+    /* Set the width of the sidebar to 0 (hide it) */
+    function closeNav() {
+      var navbar = document.getElementById("nav-side");
+      navbar.style.width = "0";
+      navbar.style.opacity = "0";
+    }
+
+
+    window.addEventListener('scroll', checkVisibility);
+
+    // Check on initial load
+    window.addEventListener('DOMContentLoaded', checkVisibility);
+  </script>
 
 </body>
 

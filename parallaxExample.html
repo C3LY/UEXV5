@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction Aware Hover Effect</title>
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    font-family: 'Arial', sans-serif;
+  }
+  .card-container {
+    perspective: 1000px;
+    margin: 10px;
+  }
+  .card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  .card:hover .card-content {
+    transform: translateY(0) rotateX(0deg);
+  }
+  .card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%) rotateX(90deg);
+    transform-origin: bottom;
+    transition: transform 0.5s;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card">
+    <img src="https://source.unsplash.com/random" alt="Image">
+    <div class="card-content">Text 1</div>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <img src="https://via.placeholder.com/200x300" alt="Image">
+    <div class="card-content">Text 2</div>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <img src="https://via.placeholder.com/200x300" alt="Image">
+    <div class="card-content">Text 3</div>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card">
+    <img src="https://via.placeholder.com/200x300" alt="Image">
+    <div class="card-content">Text 4</div>
+  </div>
+</div>
+
+<script>
+// We will use JavaScript to detect the direction of the mouse
+// entering and leaving to give a direction-aware hover effect.
+// However, this effect is quite complex and usually involves
+// tracking mouse events and calculating angles, which is beyond
+// the scope of this simple prototype. For a complete solution,
+// libraries such as jQuery or custom JavaScript would be required.
+</script>
+
+</body>
+</html>

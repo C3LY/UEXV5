@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floating and Fading Image on Scroll</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* Enough height to allow for scrolling */
+  }
+
+  .content {
+    height: 150vh; /* Some arbitrary height to force a scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 100%;
+    max-width: 400px; /* Maximum image width */
+    opacity: 0;
+    transform: translate3d(0, 80px, 0); /* Start 50 pixels down */
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+    will-change: opacity, transform;
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); /* End at the original position */
+  }
+</style>
+</head>
+<body>
+
+<div class="content">
+  <img id="floatImage" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
+</div>
+
+<script>
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+
+  function checkVisibility() {
+    const img = document.getElementById('floatImage');
+    if (isInViewport(img)) {
+      img.classList.add('visible');
+    } else {
+      img.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+
+  // Check on initial load
+  window.addEventListener('DOMContentLoaded', checkVisibility);
+</script>
+
+</body>
+</html>
