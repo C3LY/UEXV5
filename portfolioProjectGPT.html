@@ -14,6 +14,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
+      font-weight: 100;
     }
 
     .section {
@@ -22,7 +23,8 @@ To create a portfolio project page similar to the screenshots you've provided, w
     }
 
     .title-section {
-      height: 100vh;
+      height: 80vh;
+      width: 80vw;
       background: url(images/P1.png) no-repeat center center;
       background-size: cover;
       display: flex;
@@ -33,6 +35,8 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
     .title {
       font-size: 10vw;
+      font-weight: 500;
+      text-transform: uppercase;
       color: white;
     }
 
@@ -44,32 +48,31 @@ To create a portfolio project page similar to the screenshots you've provided, w
       min-height: 100vh;
     }
 
-    .video-section {
+    /* .video-section {
       background: #000;
       /* margin: 50px 10%; */
-      min-height: 50vh;
+      /* min-height: 50vh;
       max-width: 100vw;
       color: white;
-    }
+    } */
 
-    .video-container {
+    /* .video-container {
       width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden;
-    }
+    } */ 
 
-    .video-container video {
+    /* .video-container video {
       width: 100%;
       height: auto;
-    }
+    } */
 
     /* --- */
 
     .header {
-      font-size: 1.5em;
+      font-size: 2.5em;
       /* Large font size for the header */
-      font-weight: 700;
       text-transform: uppercase;
       padding: 20px 50px;
       /* Padding around the header */
@@ -81,22 +84,31 @@ To create a portfolio project page similar to the screenshots you've provided, w
     .content {
       display: flex;
       padding: 20px 50px;
+      min-height: 50vh;
       /* Padding around the content */
     }
 
     .left-column {
-      font-size: 0.8em;
+      font-size: 2em;
       /* Smaller font size for the left column */
       padding-right: 10%;
       /* Space between the columns */
-      flex: 1;
+      display: flex;
+
+      width: 60vh;
+	
+	/* Make a horizontal flexbox (the default) */
+	flex-direction: row;
       /* Take up 1/3 of the content space */
       color: #555;
       /* Darker text color for the left column */
+
+      align-items: center;
     }
 
     .right-column {
-      font-size: 2em;
+      width: 40vh;
+      font-size: 5em;
       /* Larger font size for the right column */
       flex: 2;
       /* Take up 2/3 of the content space */
@@ -110,25 +122,45 @@ To create a portfolio project page similar to the screenshots you've provided, w
       text-decoration: none;
       font-weight: bold;
     }
+
+    h1{
+    font-size: 2em;
+            padding-left: 30px;
+            padding-top:20px;
+            font-weight: 300;
+    }
+
+    .nav-side{
+      padding-right: 20px;
+      margin-left: 5vh;
+            background-color: rgba(48, 167, 202, 0.5);
+            writing-mode: vertical-rl;
+            /* margin-bottom: 100px; */
+            height:max-content;
+            overflow: hidden;
+            word-spacing: 10px;
+            font-size: large;
+    }
+
+    .title-container{
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="section title-section">
-    <div class="title">WATERHOUSE CHARTERS</div>
-  </div>
+  <h1>UEX Portfolio</h1>
 
-  <div class="section scrolling-text-section">
-    <p>Waterhouse Charters set sail in 2022 to create exclusive, memorable boating experiences for luxury leisure
-      seekers in Grand Cayman. We were tasked with creating a distinct visual identity that would define the brand as
-      the premium option within the industry.</p>
-  </div>
-
-  <div class="section video-section">
-    <div class="video-container">
-      <!-- Embed your video here -->
-      <video src="path-to-your-video.mp4" controls></video>
+  <div class="title-container">
+    <div class="nav-side"><span id="portfolio1">Design For Empathy</span> - <span id="portfolio2">Designn for Environmental and Social Transformations</span>  - <span id="portfolio3">Design Instruments for Architects</span> - <span id="portfolio4">Design With Style</span> - <span id="portfolio5">Design for Context</span> - <span id="portfolio6">Design for Blend</span></div>
+    <div class="section title-section">
+      <div class="title">Transcarry</div>
+    </div>
+    <div class="section scrolling-text-section">
+      <p>Waterhouse Charters set sail in 2022 to create exclusive, memorable boating experiences for luxury leisure
+        seekers in Grand Cayman. We were tasked with creating a distinct visual identity that would define the brand as
+        the premium option within the industry.</p>
     </div>
   </div>
 
@@ -141,7 +173,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
       appeal of the premium vessel.
       <br><br>
-      <a href="#book" class="context-link">Book your luxury charter.</a>
+      <!-- <a href="#book" class="context-link">Book your luxury charter.</a> -->
     </div>
     <div class="right-column">
       The premium boat charter experience in the Cayman Islands required a premium brand that stood out from the rest.
