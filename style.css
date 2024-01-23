@@ -13,7 +13,7 @@ html {
 }
 
 h1{
-    font-size: 2em;
+    font-size: 1em;
     padding-left: 30px;
     padding-top:20px;
     font-weight: 300;
@@ -43,7 +43,7 @@ h1{
     font-weight: 100;
     /* Adjust to match your screenshot */
     color: rgb(133, 37, 37);
-    animation: ticker 50s linear infinite ;
+    animation: ticker 100s linear infinite ;
     /* Increased duration for slower movement */
     letter-spacing: 0.05em;
     text-transform:uppercase;
@@ -79,7 +79,7 @@ h1{
     height:max-content;
     overflow: hidden;
     word-spacing: 10px;
-    font-size: large;
+    font-size: medium;
     /* Set a fixed height or as per your design needs */
 
 }
@@ -106,7 +106,7 @@ h1{
     /* Align portfolio titles to the right */
     padding: 20px;
     overflow: hidden;
-
+    text-transform: uppercase;
     z-index: 2;
 
     -ms-overflow-style: none;
@@ -116,7 +116,7 @@ h1{
 }
 
 .image-preview {
-    background-color: blueviolet;
+    background-color: rgba(35, 32, 32, 0.394);
     /* width: 50%; */
     /* Image preview takes up the other half */
     height: 90vh;
@@ -139,6 +139,24 @@ h1{
     /* Ensure image is above the text */
 }
 
+/* https://stackoverflow.com/questions/11660710/css-transition-fade-in */ 
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .bigtext-preview {
     background-color: rgb(255, 255, 255, 0.5);
     width: 25%;
@@ -147,7 +165,7 @@ h1{
     background-size: cover;
     background-position: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: 100;
     font-style: italic;
     padding: 5%;
@@ -174,7 +192,7 @@ align-items: center;
 }
 
 .portfolio-item {
-    font-size: 48px;
+    font-size: 1.5em;
     font-weight: 300;
     /* margin: 20px 0; */
     /* padding-top: 10%; */

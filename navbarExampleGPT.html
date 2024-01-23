@@ -3,84 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Dropdown Hamburger Menu</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+<title>Page Title</title>
 <style>
-  body {
+  body, h1, nav, ul, li {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    padding: 0;
   }
-
-  .navbar {
-    background-color: #333;
-    overflow: hidden;
-  }
-
-  /* Hamburger button */
-  .hamburger {
-    display: none;
-    cursor: pointer;
+  
+  nav {
+    background: #333; /* Replace with your navbar color */
     color: white;
-    padding: 14px 16px;
-    float: right;
+    padding: 1em;
   }
 
-  .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 6px 0;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
   }
 
-  /* Navbar links */
-  .nav-links {
-    display: none;
-    background-color: #333;
-    text-align: left;
+  li {
+    padding: 0 1em;
   }
 
-  .nav-links a {
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  /* Show dropdown */
-  .show {display: block;}
+  .title-section {
+    margin-left: 1em;
+  }
 
-  @media screen and (max-width: 600px) {
-    .navbar a {display: none;}
-    .hamburger {display: block;}
+  .title {
+    font-size: 2em; /* Replace with your desired font size */
+    color: #333; /* Replace with your desired font color */
+  }
+
+  /* Add your background image to the .header-container */
+  .header-container {
+    background-image: url('your-image-url.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust based on your design */
   }
 </style>
 </head>
 <body>
 
-<div class="navbar">
-  <div class="hamburger" onclick="toggleDropdown()">
-    <div></div>
-    <div></div>
-    <div></div>
+<header class="header-container">
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <div class="title-section">
+    <h1 class="title">Your Title Here</h1>
   </div>
-  <div class="nav-links" id="navLinks">
-    <a href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
-</div>
+</header>
 
-<script>
-function toggleDropdown() {
-  var links = document.getElementById("navLinks");
-  if (links.style.display === "block") {
-    links.style.display = "none";
-  } else {
-    links.style.display = "block";
-  }
-}
-</script>
+<!-- The rest of your page content goes here -->
 
 </body>
 </html>

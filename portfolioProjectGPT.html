@@ -51,7 +51,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
     /* .video-section {
       background: #000;
       /* margin: 50px 10%; */
-      /* min-height: 50vh;
+    /* min-height: 50vh;
       max-width: 100vw;
       color: white;
     } */
@@ -61,7 +61,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       height: 100%;
       position: relative;
       overflow: hidden;
-    } */ 
+    } */
 
     /* .video-container video {
       width: 100%;
@@ -71,12 +71,13 @@ To create a portfolio project page similar to the screenshots you've provided, w
     /* --- */
 
     .header {
+      margin-top: 10px;
       font-size: 2.5em;
       /* Large font size for the header */
       text-transform: uppercase;
       padding: 20px 50px;
       /* Padding around the header */
-      background-color: #f2f2f2;
+      /* background-color: #f2f2f2; */
       /* Background color for the header section */
       letter-spacing: 1px;
     }
@@ -89,16 +90,16 @@ To create a portfolio project page similar to the screenshots you've provided, w
     }
 
     .left-column {
-      font-size: 2em;
+      font-size: 1em;
       /* Smaller font size for the left column */
       padding-right: 10%;
       /* Space between the columns */
       display: flex;
 
       width: 60vh;
-	
-	/* Make a horizontal flexbox (the default) */
-	flex-direction: row;
+
+      /* Make a horizontal flexbox (the default) */
+      flex-direction: row;
       /* Take up 1/3 of the content space */
       color: #555;
       /* Darker text color for the left column */
@@ -108,7 +109,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
     .right-column {
       width: 40vh;
-      font-size: 5em;
+      font-size: 2em;
       /* Larger font size for the right column */
       flex: 2;
       /* Take up 2/3 of the content space */
@@ -123,27 +124,30 @@ To create a portfolio project page similar to the screenshots you've provided, w
       font-weight: bold;
     }
 
-    h1{
-    font-size: 2em;
-            padding-left: 30px;
-            padding-top:20px;
-            font-weight: 300;
+    h1 {
+      height: 10vh;
+      font-size: 1em;
+      padding-left: 30px;
+      padding-top: 20px;
+      font-weight: 300;
     }
 
-    .nav-side{
+    .nav-side {
       padding-right: 20px;
       margin-left: 5vh;
-            background-color: rgba(48, 167, 202, 0.5);
-            writing-mode: vertical-rl;
-            /* margin-bottom: 100px; */
-            height:max-content;
-            overflow: hidden;
-            word-spacing: 10px;
-            font-size: large;
+      /* background-color: rgba(48, 167, 202, 0.5); */
+      writing-mode: vertical-rl;
+      /* margin-bottom: 100px; */
+      height: 80vh;
+      flex-wrap: wrap;
+      word-spacing: 10px;
+      font-size: medium;
     }
 
-    .title-container{
-      flex-wrap: wrap;
+    .title-container {
+      display: flex;
+      justify-content: space-between;
+      /* align-items: stretch; */
     }
   </style>
 </head>
@@ -153,21 +157,20 @@ To create a portfolio project page similar to the screenshots you've provided, w
   <h1>UEX Portfolio</h1>
 
   <div class="title-container">
-    <div class="nav-side"><span id="portfolio1">Design For Empathy</span> - <span id="portfolio2">Designn for Environmental and Social Transformations</span>  - <span id="portfolio3">Design Instruments for Architects</span> - <span id="portfolio4">Design With Style</span> - <span id="portfolio5">Design for Context</span> - <span id="portfolio6">Design for Blend</span></div>
+    <nav class="nav-side">
+      <span id="portfolio1">Design For Empathy</span> - <span id="portfolio2">Designn for
+        Environmental and Social Transformations</span> - <span id="portfolio3">Design Instruments for Architects</span>
+      - <span id="portfolio4">Design With Style</span> - <span id="portfolio5">Design for Context</span> - <span
+        id="portfolio6">Design for Blend</span>
+    </nav>
     <div class="section title-section">
       <div class="title">Transcarry</div>
     </div>
-    <div class="section scrolling-text-section">
-      <p>Waterhouse Charters set sail in 2022 to create exclusive, memorable boating experiences for luxury leisure
-        seekers in Grand Cayman. We were tasked with creating a distinct visual identity that would define the brand as
-        the premium option within the industry.</p>
-    </div>
   </div>
 
-
-  <div class="header">Context</div>
-
+  <div class="header">Project Description</div>
   <div class="content">
+
     <div class="left-column">
       Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
       crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
@@ -175,10 +178,10 @@ To create a portfolio project page similar to the screenshots you've provided, w
       <br><br>
       <!-- <a href="#book" class="context-link">Book your luxury charter.</a> -->
     </div>
+
     <div class="right-column">
       The premium boat charter experience in the Cayman Islands required a premium brand that stood out from the rest.
     </div>
-  </div>
 
   </div>
 
