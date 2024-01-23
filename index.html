@@ -125,6 +125,7 @@
         }
 
         .image-preview {
+            background-color: blueviolet;
             /* width: 50%; */
             /* Image preview takes up the other half */
             height: 90vh;
@@ -245,7 +246,7 @@
             <!-- ... -->
         </div>
         <div class="bigtext-preview" id="bigTextPreview">UEX is the module of the future</div>
-        <div class="image-preview" id="imagePreview"></div>
+        <div class="image-preview" id="imagePreview" style="overflow: hidden; "><video width="auto" height="100%" src="videos/P5BSquare.mp4" preload autoplay loop muted></video></div>
     </div>
 
     <script>
@@ -270,9 +271,9 @@
             var imagePreview = document.getElementById('imagePreview');
             // imagePreview.style.backgroundImage = `url('${imageUrl[portfolio]}')`;
             console.log(portfolioItems.find(x => x.id === portfolio).imageURL);
-            var tempImageURL = (portfolioItems.find(x => x.id === portfolio).imageURL);
-            imagePreview.style.backgroundImage = tempImageURL;
-            imagePreview.style.display = 'block'; // Show the image box
+            // var tempImageURL = (portfolioItems.find(x => x.id === portfolio).imageURL);
+            // imagePreview.style.backgroundImage = tempImageURL;
+            // imagePreview.style.display = 'block'; // Show the image box
 
 
             portfolioItems.forEach(element => document.getElementById(element.id).style.color = 'black');
