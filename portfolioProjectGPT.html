@@ -88,6 +88,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       font-size: medium;
 
       width: 0;
+      opacity: 0;
     }
 
     .nav-side .closebtn {
@@ -149,8 +150,8 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
     .content {
       display: flex;
-      padding: 20px 50px;
-      min-height: 50vh;
+      padding-left: 90px;
+      min-height: 40vh;
       /* Padding around the content */
     }
 
@@ -184,7 +185,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
     }
 
 
-    img {
+    .floatingImage {
       width: 100%;
       max-width: 400px;
       /* Maximum image width */
@@ -198,7 +199,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       -webkit-filter: grayscale(100%);
     }
 
-    img:hover {
+    .floatingImage:hover {
       filter: none;
       -webkit-filter: grayscale(0);
     }
@@ -276,11 +277,45 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
     .experienceText {
       text-align: left;
-      max-width: 40vw;
+      max-width: 20vw;
+      max-height: 10vh;
     }
 
     /* cards */
-    
+    .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+  }
+  .card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    overflow: hidden;
+    background-color: #ddd;
+  }
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
   </style>
 </head>
 
@@ -318,7 +353,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
     </div>
 
     <div class="right-column">
-      <img id="floatImage" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
+      <img class="floatingImage" id="floatImage" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
     </div>
   </div>
 
@@ -354,6 +389,25 @@ To create a portfolio project page similar to the screenshots you've provided, w
     appeal of the premium vessel.
     <br><br>
 
+  </div>
+
+  <div class="card-container">
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random" alt="Placeholder">
+      <div class="info">Test</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?apple" alt="Placeholder">
+      <div class="info">Card Text 2</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?2" alt="Placeholder">
+      <div class="info">Card Text 3</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?3" alt="Placeholder">
+      <div class="info">Card Text 4</div>
+    </div>
   </div>
 
 
@@ -394,6 +448,62 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
     // Check on initial load
     window.addEventListener('DOMContentLoaded', checkVisibility);
+
+    // Card script
+    document.querySelectorAll('.card').forEach(function(card) {
+    card.addEventListener('mouseenter', function(event) {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+      let direction = '';
+      const slope = h / w;
+      if(y < slope * x && y < -slope * x + h) {
+        direction = 'top';
+      } else if(y < slope * x && y > -slope * x + h) {
+        direction = 'right';
+      } else if(y > slope * x && y < -slope * x + h) {
+        direction = 'left';
+      } else {
+        direction = 'bottom';
+      }
+      const info = card.querySelector('.info');
+      info.style.opacity = 1;
+      info.style.transform = 'none';
+      card.setAttribute('data-direction', direction);
+    });
+
+    card.addEventListener('mouseleave', function(event) {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+      let direction = '';
+      const slope = h / w;
+      if(y < slope * x && y < -slope * x + h) {
+        direction = 'top';
+      } else if(y < slope * x && y > -slope * x + h) {
+        direction = 'right';
+      } else if(y > slope * x && y < -slope * x + h) {
+        direction = 'left';
+      } else {
+        direction = 'bottom';
+      }
+      const info = card.querySelector('.info');
+      info.style.opacity = 0;
+      if(direction === 'top') {
+        info.style.transform = 'translateY(-100%)';
+      } else if(direction === 'right') {
+        info.style.transform = 'translateX(100%)';
+      } else if(direction === 'left') {
+        info.style.transform = 'translateX(-100%)';
+      } else {
+        info.style.transform = 'translateY(100%)';
+      }
+    });
+  });
   </script>
 
 </body>
