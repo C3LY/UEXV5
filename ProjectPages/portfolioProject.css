@@ -186,6 +186,7 @@
   .greyscale:hover{
     filter: none;
     -webkit-filter: grayscale(0);
+    cursor:pointer;
   }
 
   .visible {
@@ -286,4 +287,21 @@
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
+}
+
+
+ /* -------------------- make big --------------------  */
+/* Define the initial state of the enlargingImage class */
+.enlargingImage {
+  /* No initial positioning or transformation */
+  transition: transform 0.3s; /* Add a smooth transition effect */
+}
+
+/* Define the enlarged state when the image is clicked */
+.enlarged {
+  position: fixed;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge to 150% of original size */
 }
