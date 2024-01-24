@@ -1,15 +1,49 @@
 import { portfolioProjects } from './portfolioData.js';
-function loadProjectData() {
-    const params = new URLSearchParams(window.location.search);
-    const projectId = params.get('project');
-    const projectData = portfolioProjects.find(p => p.id === projectId);
-    console.log(portfolioProjects);
+function loadProjectData(projectData) {
+
 
     if (projectData) {
-        document.getElementById('project-title').innerText = projectData.title;
-        document.getElementById('project-description').innerText = projectData.description;
-        // Update other placeholders similarly
+        document.getElementById('project-title').innerText = projectData.title; // Update the text with projectData.title
+        document.getElementById('project-heading').innerText = projectData.title;
+
+        document.getElementById('project-textProjectDescription').innerHTML = projectData.textProjectDescription;
+        // document.getElementById('project-imageContentRight').innerHTML = projectData.imageContentRight;
+        document.getElementById('project-textProcessLeft').innerHTML = projectData.textProcessLeft;
+        // document.getElementById('project-textProcessRight').innerHTML = projectData.textProcessRight;
+        // document.getElementById('project-imageCenter').innerHTML = projectData.imageCenter;
+        document.getElementById('project-textMyExperienceAndOpinion').innerHTML = projectData.textMyExperienceAndOpinion;
+
     }
+}
+
+function loadCards(projectData) {
+
+    if (projectData) {
+        const cardContainer = document.getElementById('card-container-dynamic');
+        console.log("card container" + cardContainer);
+
+        projectData.imageProcessCards.forEach(imageCard => {
+            const card = document.createElement('div');
+            card.className = 'card enlargeImageAbility';
+            card.setAttribute('data-direction', '');
+
+            const image = document.createElement('img');
+            image.src = imageCard["image"];
+            image.alt = 'Placeholder';
+
+            const info = document.createElement('div');
+            info.className = 'info';
+            info.textContent = imageCard["text"];
+
+            card.appendChild(image);
+            card.appendChild(info);
+
+            console.log("card container" + card);
+            cardContainer.append(card);
+
+        });
+
+    };
 }
 
 function buildNavBar() {
@@ -23,8 +57,24 @@ function buildNavBar() {
     });
 }
 
+
 // On page load
 window.onload = () => {
-    loadProjectData();
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project');
+    const projectData = portfolioProjects.find(p => p.id === projectId);
+
+    loadProjectData(projectData);
     buildNavBar();
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project');
+    const projectData = portfolioProjects.find(p => p.id === projectId);
+
+    loadCards(projectData);
+});
+
+
+

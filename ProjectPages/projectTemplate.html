@@ -18,19 +18,9 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
   <nav class="nav-side" id="project-nav"></nav>
 
-  <!-- <nav class="nav-side" id="nav-side"> -->
-    <!-- <a href="javascript:void(0)" class="closebtn" id="nav-side-closebtn"> <span>&times; </span> </a> -->
-    <!-- <a href="ProjectPages/P1.html"> <span id="portfolio1">Design For Empathy</span> </a> - 
-    <a href="ProjectPages/P2.html"> <span id="portfolio2">Design For Environmental and Social Transformations</span> </a> - 
-    <a href="ProjectPages/P3.html"> <span id="portfolio3">Design Instruments for Architects</span> </a> - 
-    <a href="ProjectPages/P4.html"> <span id="portfolio4">Design With Style</span> </a> - 
-    <a href="ProjectPages/P5.html"> <span id="portfolio5">Design For Context</span> </a> -
-    <a href="ProjectPages/P6.html"> <span id="portfolio6">Design For Blend</span> </a> -->
-  <!-- </nav> -->
-
   <div class="title-container">
     <div class="section title-section dynamic-bg" data-image-path="../images/P1.png">
-      <div class="title">Transcarry</div>
+      <div class="title" id="project-heading"></div>
     </div>
   </div>
 
@@ -38,7 +28,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
   <div class="header">Project Description</div>
   <div class="content">
 
-    <div class="left-column">
+    <div class="left-column" id="project-textProjectDescription">
       Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
       crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
       appeal of the premium vessel.
@@ -46,7 +36,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
       <!-- <a href="#book" class="context-link">Book your luxury charter.</a> -->
     </div>
 
-    <div class="right-column">
+    <div class="right-column ">
       <img class="floatingImage content-image greyscale enlargeImageAbility" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
     </div>
   </div>
@@ -55,7 +45,7 @@ To create a portfolio project page similar to the screenshots you've provided, w
   <div class="header">The Process</div>
   <div class="content">
 
-    <div class="left-column">
+    <div class="left-column" id="project-textProcessLeft">
       Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
       crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
       appeal of the premium vessel.
@@ -89,13 +79,13 @@ To create a portfolio project page similar to the screenshots you've provided, w
   <div class="parallax-container">
     <div class="image-container floatingImage" style="background: url('https://source.unsplash.com/random') no-repeat center;"></div>
     <div style="display: inline-block;">
-      <div class="parallax-text" aria-hidden="true">One Two Three Four Five</div>
+      <div class="parallax-text" aria-hidden="true">---Design for UEX</div>
     </div>
   </div>
 
   <!-- Experience and Opinion-->
   <div class="header">My Experience and Opinion</div>
-  <div class="content experienceText">
+  <div class="content experienceText" id="project-textMyExperienceAndOpinion">
 
     Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
     crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
@@ -104,30 +94,12 @@ To create a portfolio project page similar to the screenshots you've provided, w
 
   </div>
 
-  <div class="card-container">
-    <div class="card enlargeImageAbility" data-direction="">
-      <img src="https://source.unsplash.com/random" alt="Placeholder">
-      <div class="info">Test</div>
-    </div>
-    <div class="card enlargeImageAbility" data-direction="">
-      <img src="https://source.unsplash.com/random?apple" alt="Placeholder">
-      <div class="info">Card Text 2</div>
-    </div>
-    <div class="card enlargeImageAbility" data-direction="">
-      <img src="https://source.unsplash.com/random?2" alt="Placeholder">
-      <div class="info">Card Text 3</div>
-    </div>
-    <div class="card enlargeImageAbility" data-direction="">
-      <img src="https://source.unsplash.com/random?3" alt="Placeholder">
-      <div class="info">Card Text 4</div>
-    </div>
-  </div>
+  <div id="card-container-dynamic" class="card-container"></div>
 
 
-  <script type="module" src="portfolioProject.js"></script>
  <script type="module" src="portfolioData.js"></script>
 <script type="module" src="portfolioDynamicLoad.js"></script> 
-
+<script type="module" src="portfolioProject.js"></script>
 </body>
 
 </html>
