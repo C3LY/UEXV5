@@ -48,8 +48,8 @@
   /* Set the width of the sidebar to 0 (hide it) */
   function closeNav() {
     var navbar = document.getElementById("nav-side");
-    navbar.style.width = "0";
-    navbar.style.opacity = "0";
+      navbar.style.width = "0";
+      navbar.style.opacity = "0";
   }
 
 
@@ -62,6 +62,7 @@ let bgElement = document.getElementById('dynamic-bg');
 
   window.addEventListener('scroll', checkVisibility);
 
+
   function initialize() {
     changeBackgroundImage();
     checkVisibility();
@@ -69,6 +70,11 @@ let bgElement = document.getElementById('dynamic-bg');
   
   window.addEventListener('scroll', checkVisibility);
   window.addEventListener('DOMContentLoaded', initialize);
+
+  document.getElementById('nav-side').addEventListener('mouseleave', closeNav);
+  document.getElementById('logo').addEventListener('mouseenter', openNav);
+  // document.getElementById('nav-side-closebtn').addEventListener('click', closeNav);
+
 
 
  /* ---------- card script --------- */
