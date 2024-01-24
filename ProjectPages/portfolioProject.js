@@ -21,14 +21,12 @@ function checkVisibility() {
 
 /* ---------- navbar --------- */
 
-/* Set the width of the sidebar to 250px (show it) */
 function openNav() {
   var navbar = document.getElementById("project-nav");
   navbar.style.width = "10px";
   navbar.style.opacity = "100";
 }
 
-/* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
   var navbar = document.getElementById("project-nav");
   navbar.style.width = "0";
@@ -55,30 +53,30 @@ document.getElementById('logo').addEventListener('mouseenter', openNav);
 
 
 /* -------------------- enlarging images --------------------  */
-function addingEnlarging(){
+function addingEnlarging() {
   const images = document.querySelectorAll('.enlargeImageAbility');
 
-  // Function to handle image click
+
   function handleImageClick(event) {
     const image = event.currentTarget;
-  
-    // Check if the image is already enlarged
+
+
     const isEnlarged = image.classList.contains('enlarged');
-  
-    // If not enlarged, enlarge it; otherwise, remove the 'enlarged' class
+
+
     if (!isEnlarged) {
       image.classList.add('enlarged');
     } else {
       image.classList.remove('enlarged');
     }
   }
-  
-  // Add click listeners to each image
+
+
   images.forEach(image => {
     image.addEventListener('click', handleImageClick);
   });
-  
-  // Function to handle clicks outside of enlarged images
+
+
   document.addEventListener('click', function (event) {
     images.forEach(image => {
       if (!image.contains(event.target)) {
@@ -86,13 +84,13 @@ function addingEnlarging(){
       }
     });
   });
-  
+
 }
 
 
 /* ---------- card script --------- */
 
-function addCardFunctionality(){
+function addCardFunctionality() {
   document.querySelectorAll('.card').forEach(function (card) {
     card.addEventListener('mouseenter', function (event) {
       const rect = card.getBoundingClientRect();
@@ -116,7 +114,7 @@ function addCardFunctionality(){
       info.style.transform = 'none';
       card.setAttribute('data-direction', direction);
     });
-  
+
     card.addEventListener('mouseleave', function (event) {
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;

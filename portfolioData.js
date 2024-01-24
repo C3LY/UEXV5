@@ -1,4 +1,4 @@
-export const portfolioProjects = [
+export const PORTFOLIOPROJECTS = [
     {
         // for title page
         id: 'portfolio1',
@@ -176,4 +176,4 @@ export const portfolioProjects = [
 
 ];
 
-export default portfolioProjects;
+export default PORTFOLIOPROJECTS;

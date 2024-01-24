@@ -1,7 +1,7 @@
-import { PORTFOLIO_ITEMS } from './PORTFOLIOITEMS.js';
+import { PORTFOLIOPROJECTS } from './portfolioData.js';
 const sidebar = document.querySelector('.sidebar');
 
-PORTFOLIO_ITEMS.forEach(item => {
+PORTFOLIOPROJECTS.forEach(item => {
     const portfolio_container = document.createElement('div');
     portfolio_container.className = 'portfolio-container';
 
@@ -45,27 +45,27 @@ function showImageAnBigText(portfolio) {
 
 function showImage(portfolio){
     var imagePreview = document.getElementById('imagePreview');
-    var tempImageURL = (PORTFOLIO_ITEMS.find(x => x.id === portfolio).imageURL);
+    var tempImageURL = (PORTFOLIOPROJECTS.find(x => x.id === portfolio).imageURL);
     imagePreview.style.backgroundImage = tempImageURL;
     imagePreview.style.display = 'block'; // Show the image box
 }
 
 function showVideo(portfolio){
     var videoPreview = document.getElementById('videoPreview');
-    videoPreview.src = (PORTFOLIO_ITEMS.find(x => x.id === portfolio).videoURL);
+    videoPreview.src = (PORTFOLIOPROJECTS.find(x => x.id === portfolio).videoURL);
 }
 
 function changeSideBarColor(portfolio) {
     var textSpan = document.getElementById(portfolio);
     textSpan.style.color = 'red';
 
- PORTFOLIO_ITEMS.forEach(element => document.getElementById(element.id).style.color = 'black');
+ PORTFOLIOPROJECTS.forEach(element => document.getElementById(element.id).style.color = 'black');
 
 }
 
 function changeBigText(portfolio){
     var bigTextPreview = document.getElementById('bigTextPreview');
-    bigTextPreview.textContent = (PORTFOLIO_ITEMS.find(x => x.id === portfolio).bigtext);
+    bigTextPreview.textContent = (PORTFOLIOPROJECTS.find(x => x.id === portfolio).bigtext);
     imagePreview.style.display = 'block';
 }
 
