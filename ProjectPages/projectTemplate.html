@@ -1,0 +1,80 @@
+<!-- GPT Recreate this screenshot, it is a portfolio project page. The title is big on the left bottom side of the screen, a huge background image is behind it that overflows down, when you scroll down, there is text as shown in the second screenshot,moving down there is a video , when you scroll down further you get a text page as shown in fourth image
+To create a portfolio project page similar to the screenshots you've provided, we will need to structure the HTML to have a large title on the left with an oversized background image, a scrolling text section, a video section, and a final text page. Here's a prototype layout using HTML and CSS: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="project-title">Portfolio Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link href="portfolioProject.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <a href="../index.html">
+    <h1 class="logo" id="logo"> &lt; UEX Portfolio</h1>
+  </a>
+
+  <nav class="nav-side" id="project-nav"></nav>
+
+  <div class="title-container">
+    <div class="title-section" id="project-imageCover">
+
+      <div class="title" id="project-heading"></div>
+    </div>
+  </div>
+
+  <!-- Project Description -->
+  <div class="header">Project Description</div>
+  <div class="content">
+
+    <div class="left-column" id="project-textProjectDescription">
+      Description Loading...
+      <br><br>
+    </div>
+
+    <div class="right-column ">
+      <img class="floatingImage content-image greyscale enlargeImageAbility" id="project-imageContentRight"
+        alt="Random Unsplash Image">
+    </div>
+  </div>
+
+  <!-- The Process -->
+  <div class="header">The Process</div>
+  <div class="content">
+
+    <div class="left-column" id="project-textProcessLeft">
+      Process Loading...
+      <br><br>
+    </div>
+
+    <div class="right-column">
+      <div id="card-container-process" class="card-container"></div>
+    </div>
+
+  </div>
+
+
+  <div class="parallax-container">
+    <div class="image-container floatingImage" id="project-imageCenter" style="background: no-repeat center;"></div>
+    <div style="display: inline-block;">
+      <div class="parallax-text" aria-hidden="true">---Design for UEX</div>
+    </div>
+  </div>
+
+  <!-- Experience and Opinion-->
+  <div class="header">My Experience and Opinion</div>
+  <div class="content experienceText" id="project-textMyExperienceAndOpinion">
+  </div>
+
+  <div id="card-container-results" class="card-container"></div>
+
+
+  <script type="module" src="portfolioData.js"></script>
+  <script type="module" src="portfolioDynamicLoad.js"></script>
+  <script type="module" src="portfolioProject.js"></script>
+</body>
+
+</html>

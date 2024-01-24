@@ -1,267 +1,262 @@
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    /* make scrollbar transparent */
-  }
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
+}
 
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
 
-  .section {
-    position: relative;
-    width: 100%;
+.logo {
+  height: 5vh;
+  font-size: 1em;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-right: 5px;
+  font-weight: 300;
 
-  }
+  position: fixed;
+  top: 0;
+  display: flex;
+  z-index: 100;
+}
 
-  .logo {
-    height: 5vh;
-    font-size: 1em;
-    padding-left: 30px;
-    padding-top: 20px;
-    padding-right: 5px;
-    font-weight: 300;
+.context-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    position: fixed;
-    top: 0;
-    display: flex;
-    z-index: 100;
-  }
+a {
+  color: black;
+  text-decoration: none;
+  /* no underline */
+}
 
-  .context-link {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-  }
+a:hover {
+  color: red;
+  text-decoration-line: underline;
+}
 
-  a {
-    color: black;
-    text-decoration: none;
-    /* no underline */
-  }
+/* -------Title Section ----------- */
 
-  a:hover {
-    color: red;
-    text-decoration-line: underline;
-  }
+.title-container {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  /* -------Title Section ----------- */
+.title-section {
+  height: 80vh;
+  width: 80vw;
+  background: no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 10%;
+  box-sizing: border-box;
 
-  .title-container {
-    display: flex;
-    justify-content: flex-end;
-  }
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
 
-  .title-section {
-    height: 80vh;
-    width: 80vw;
-    background: no-repeat center center;
-    background-size: cover;
-    display: flex;
-    align-items: flex-end;
-    padding: 0 10%;
-    box-sizing: border-box;
+.title-section:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
 
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-  }
+.title {
+  font-size: 10vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
 
-  .title-section:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-  }
+/* ------- Navigation ------- */
 
-  .title {
-    font-size: 10vw;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: white;
-  }
-  
-  /* ------- Navigation ------- */
+.nav-side {
+  position: fixed;
+  z-index: 1;
+  transition: 0.5s;
 
-  .nav-side {
-    position: fixed;
-    z-index: 1;
-    transition: 0.5s;
+  /* padding-top: 100px; no need when position fixed*/
+  padding-right: 30px;
 
-    /* padding-top: 100px; no need when position fixed*/
-    padding-right: 30px;
+  margin-top: 10vh;
+  margin-left: 10vh;
+  /* background-color: rgba(48, 167, 202, 0.5); */
+  writing-mode: vertical-rl;
+  /* margin-bottom: 100px; */
+  height: 80vh;
+  flex-wrap: wrap;
+  word-spacing: 10px;
+  font-size: medium;
 
-    margin-top: 10vh;
-    margin-left: 10vh;
-    /* background-color: rgba(48, 167, 202, 0.5); */
-    writing-mode: vertical-rl;
-    /* margin-bottom: 100px; */
-    height: 80vh;
-    flex-wrap: wrap;
-    word-spacing: 10px;
-    font-size: medium;
+  width: 0;
+  opacity: 0;
+}
 
-    width: 0;
-    opacity: 0;
-  }
-
-  .nav-side .closebtn {
-    /* position: absolute; */
-    /* top: 0; */
-    /* right: 25px; */
-    font-size: 20px;
-    /* margin-left: 80px; */
-    padding: 10px;
-  }
+.nav-side .closebtn {
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 25px; */
+  font-size: 20px;
+  /* margin-left: 80px; */
+  padding: 10px;
+}
 
 
-  /* ------ First section --------- */
+/* ------ First section --------- */
 
 
-  .header {
-    margin-top: 10px;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    padding: 50px 50px;
-    letter-spacing: 1px;
-  }
+.header {
+  margin-top: 10px;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  padding: 50px 50px;
+  letter-spacing: 1px;
+}
 
-  .content {
-    display: flex;
-    padding-left: 90px;
-    min-height: 40vh;
-  }
+.content {
+  display: flex;
+  padding-left: 90px;
+  min-height: 40vh;
+}
 
-  .left-column {
-    font-size: 1em;
-    /* Smaller font size for the left column */
-    padding-right: 10%;
-    /* Space between the columns */
-    display: flex;
+.left-column {
+  font-size: 1em;
+  /* Smaller font size for the left column */
+  padding-right: 10%;
+  /* Space between the columns */
+  display: flex;
 
-    width: 60vh;
+  width: 60vh;
 
-    /* Make a horizontal flexbox (the default) */
-    flex-direction: row;
-    /* Take up 1/3 of the content space */
-    color: #555;
-    /* Darker text color for the left column */
+  /* Make a horizontal flexbox (the default) */
+  flex-direction: row;
+  /* Take up 1/3 of the content space */
+  color: #555;
+  /* Darker text color for the left column */
 
-    align-items: center;
-  }
+  align-items: center;
+}
 
-  .right-column {
-    width: 40vh;
-    font-size: 1em;
-    /* Larger font size for the right column */
-    flex: 2;
-    /* Take up 2/3 of the content space */
-    line-height: 1.2;
-    color: #333;
-    padding-right:5vh;
-    /* Dark text color */
-  }
+.right-column {
+  width: 40vh;
+  font-size: 1em;
+  /* Larger font size for the right column */
+  flex: 2;
+  /* Take up 2/3 of the content space */
+  line-height: 1.2;
+  color: #333;
+  padding-right: 5vh;
+  /* Dark text color */
+}
 
-  .content-image {
-    width: 100%;
-    max-width: 400px;
-  }
+.content-image {
+  width: 100%;
+  max-width: 400px;
+}
 
-  .floatingImage {
-    /* Maximum image width */
-    opacity: 0;
-    transform: translate3d(0, 80px, 0);
-    /* Start 50 pixels down */
-    transition: opacity 700ms ease-out, transform 700ms ease-out;
-    will-change: opacity, transform;
-
-
-  }
-
-  .greyscale {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-  }
-
-  .greyscale:hover{
-    filter: none;
-    -webkit-filter: grayscale(0);
-    cursor:pointer;
-  }
-
-  .visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    /* End at the original position */
-  }
+.floatingImage {
+  /* Maximum image width */
+  opacity: 0;
+  transform: translate3d(0, 80px, 0);
+  /* Start 50 pixels down */
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+  will-change: opacity, transform;
 
 
- /* ---------- Big Picture --------- */
-  .parallax-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-  }
+}
+
+.greyscale {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+.greyscale:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  cursor: pointer;
+}
+
+.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  /* End at the original position */
+}
 
 
+/* ---------- Big Picture --------- */
+.parallax-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+
+.parallax-text {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  font-weight: 800;
+  color: #6868689a;
+  z-index: -1;
+  pointer-events: none;
+  text-align: right;
+  width: 30%;
+  /* Adjust the width as necessary */
+  max-width: fit-content;
+  /* Adjust max-width as necessary for responsiveness */
+}
+
+.image-container {
+  position: relative;
+  width: 80vh;
+  /* Assuming the image is square */
+  height: 80vh;
+  background-size: cover;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
   .parallax-text {
-    position: absolute;
-    top: 60%;
-    right: 0;
-    transform: translateY(-50%);
-    font-size: 5rem;
-    font-weight: 800;
-    color: #6868689a;
-    z-index: -1;
-    pointer-events: none;
-    text-align: right;
-    width: 30%;
-    /* Adjust the width as necessary */
-    max-width: fit-content;
-    /* Adjust max-width as necessary for responsiveness */
+    font-size: 3rem;
   }
 
   .image-container {
-    position: relative;
-    width: 80vh;
-    /* Assuming the image is square */
-    height: 80vh;
-    background-size: cover;
-    z-index: 2;
+    width: 50vh;
+    height: 50vh;
   }
+}
 
-  @media (max-width: 768px) {
-    .parallax-text {
-      font-size: 3rem;
-    }
+/* ---------- Experience Section --------- */
 
-    .image-container {
-      width: 50vh;
-      height: 50vh;
-    }
-  }
-
-   /* ---------- Experience Section --------- */
-
-  .experienceText {
-    text-align: left;
-    max-width: 20vw;
-    max-height: 10vh;
-  }
+.experienceText {
+  text-align: left;
+  max-width: 20vw;
+  max-height: 10vh;
+}
 
 
-   /* ---------- Grid picture Section --------- */
+/* ---------- Grid picture Section --------- */
 
-  .card-container {
+.card-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
   margin: 0;
 }
+
 .card {
   position: relative;
   width: 200px;
@@ -270,11 +265,17 @@
   overflow: hidden;
   background-color: #ddd;
 }
+
+.card:hover {
+  cursor: pointer;
+}
+
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .card .info {
   position: absolute;
   top: 0;
@@ -291,11 +292,12 @@
 }
 
 
- /* -------------------- make big --------------------  */
+/* -------------------- make big --------------------  */
 /* Define the initial state of the enlargingImage class */
 .enlargingImage {
   /* No initial positioning or transformation */
-  transition: transform 0.3s; /* Add a smooth transition effect */
+  transition: transform 0.3s;
+  /* Add a smooth transition effect */
 }
 
 /* Define the enlarged state when the image is clicked */
@@ -307,5 +309,6 @@
   height: auto;
   max-height: 70%;
   min-width: 40%;
-  transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge to 150% of original size */
+  transform: translate(-50%, -50%) scale(1.5);
+  /* Center and enlarge to 150% of original size */
 }

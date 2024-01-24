@@ -1,4 +1,4 @@
-export const PORTFOLIO_ITEMS = [
+export const PORTFOLIOPROJECTS = [
     {
         id: 'portfolio1',
         title: 'Transcarry',
