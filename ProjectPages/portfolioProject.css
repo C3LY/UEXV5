@@ -153,12 +153,13 @@
 
   .right-column {
     width: 40vh;
-    font-size: 2em;
+    font-size: 1em;
     /* Larger font size for the right column */
     flex: 2;
     /* Take up 2/3 of the content space */
     line-height: 1.2;
     color: #333;
+    padding-right:5vh;
     /* Dark text color */
   }
 
@@ -303,5 +304,8 @@
   z-index: 100;
   left: 50%;
   top: 50%;
+  height: auto;
+  max-height: 70%;
+  min-width: 40%;
   transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge to 150% of original size */
 }
