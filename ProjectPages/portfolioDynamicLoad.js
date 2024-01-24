@@ -6,45 +6,48 @@ function loadProjectData(projectData) {
         document.getElementById('project-title').innerText = projectData.title; // Update the text with projectData.title
         document.getElementById('project-heading').innerText = projectData.title;
 
+        // document.getElementById('project-imageCover').style.backgroundImage = 'url(' + projectData.imageCover + ')';
         document.getElementById('project-textProjectDescription').innerHTML = projectData.textProjectDescription;
-        // document.getElementById('project-imageContentRight').innerHTML = projectData.imageContentRight;
+        document.getElementById('project-imageContentRight').src = projectData.imageContentRight;
         document.getElementById('project-textProcessLeft').innerHTML = projectData.textProcessLeft;
-        // document.getElementById('project-textProcessRight').innerHTML = projectData.textProcessRight;
-        // document.getElementById('project-imageCenter').innerHTML = projectData.imageCenter;
+
+        document.getElementById('project-imageCenter').style.background = 'url(' + projectData.imageCenter + ')';
         document.getElementById('project-textMyExperienceAndOpinion').innerHTML = projectData.textMyExperienceAndOpinion;
 
     }
 }
 
-function loadCards(projectData) {
 
-    if (projectData) {
-        const cardContainer = document.getElementById('card-container-dynamic');
-        console.log("card container" + cardContainer);
+function createCards(cardContainer, cards) {
+    if (cardContainer && cards && Array.isArray(cards)) {
+      cards.forEach(cardData => {
+        const card = document.createElement('div');
+        card.className = 'card enlargeImageAbility';
+        card.setAttribute('data-direction', '');
+  
+        const image = document.createElement('img');
+        image.src = cardData.image;
+        image.alt = 'Placeholder';
+  
+        const info = document.createElement('div');
+        info.className = 'info';
+        info.textContent = cardData.text;
+  
+        card.appendChild(image);
+        card.appendChild(info);
+  
+        cardContainer.appendChild(card);
+      });
+    }
+  }
 
-        projectData.imageProcessCards.forEach(imageCard => {
-            const card = document.createElement('div');
-            card.className = 'card enlargeImageAbility';
-            card.setAttribute('data-direction', '');
+  function loadInCards(projectData){
+    const processCardContainer = document.getElementById('card-container-process');
+    const resultsCardContainer = document.getElementById('card-container-results');
+    createCards(processCardContainer, projectData.imageProcessCards);
+    createCards(resultsCardContainer, projectData.imageResultsCards);
+  };
 
-            const image = document.createElement('img');
-            image.src = imageCard["image"];
-            image.alt = 'Placeholder';
-
-            const info = document.createElement('div');
-            info.className = 'info';
-            info.textContent = imageCard["text"];
-
-            card.appendChild(image);
-            card.appendChild(info);
-
-            console.log("card container" + card);
-            cardContainer.append(card);
-
-        });
-
-    };
-}
 
 function buildNavBar() {
     const navBar = document.getElementById('project-nav');
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const projectId = params.get('project');
     const projectData = portfolioProjects.find(p => p.id === projectId);
 
-    loadCards(projectData);
+    loadInCards(projectData);
 });
 
 

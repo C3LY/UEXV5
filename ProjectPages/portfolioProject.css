@@ -57,6 +57,8 @@
   }
 
   .title-section {
+
+    /* background-image: 'url("https://source.unsplash.com/random/?red")'; */
     height: 80vh;
     width: 80vw;
     background: no-repeat center center;
@@ -269,6 +271,10 @@
   margin: 10px;
   overflow: hidden;
   background-color: #ddd;
+}
+
+.card:hover{
+  cursor: pointer;
 }
 .card img {
   width: 100%;
