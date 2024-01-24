@@ -36,18 +36,10 @@ function closeNav() {
 }
 
 
-function changeBackgroundImage() {
-  let bgElements = document.getElementsByClassName('dynamic-bg');
-  let requiredBgElement = bgElements[0];
-  let imagePath = requiredBgElement.getAttribute('data-image-path');
-  requiredBgElement.style.backgroundImage = `url('${imagePath}')`;
-}
-
 window.addEventListener('scroll', checkVisibility);
 
 
 function initialize() {
-  changeBackgroundImage();
   checkVisibility();
   addingEnlarging();
   addCardFunctionality();

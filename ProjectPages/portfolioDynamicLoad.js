@@ -6,7 +6,7 @@ function loadProjectData(projectData) {
         document.getElementById('project-title').innerText = projectData.title; // Update the text with projectData.title
         document.getElementById('project-heading').innerText = projectData.title;
 
-        // document.getElementById('project-imageCover').style.backgroundImage = 'url(' + projectData.imageCover + ')';
+        document.getElementById('project-imageCover').style.backgroundImage = 'url(' + projectData.imageCover + ')';
         document.getElementById('project-textProjectDescription').innerHTML = projectData.textProjectDescription;
         document.getElementById('project-imageContentRight').src = projectData.imageContentRight;
         document.getElementById('project-textProcessLeft').innerHTML = projectData.textProcessLeft;
