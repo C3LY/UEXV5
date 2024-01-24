@@ -1,6 +1,6 @@
-const portfolioProjects = [
+export const portfolioProjects = [
     {
-// for title page
+        // for title page
         id: 'portfolio1',
         title: 'Transcarry',
         description: 'Design by Empathy.',
@@ -8,7 +8,7 @@ const portfolioProjects = [
         videoURL: 'videos/P1.mp4',
         symbolURL: 'symbols/P1.svg',
         bigtext: 'Shopping that waits for you where you need it',
-// for project page
+        // for project page
         backgroundImage: "https://source.unsplash.com/random?6",
         textContentLeft: "Description for Project 1",
         imageContentRight: "Description for Project 1",
@@ -20,7 +20,7 @@ const portfolioProjects = [
         imageCard2: "https://source.unsplash.com/random?2",
         imageCard3: "https://source.unsplash.com/random?3",
         imageCard4: "https://source.unsplash.com/random?4",
-        
+
 
 
     },
@@ -45,15 +45,15 @@ const portfolioProjects = [
         imageCard3: "https://source.unsplash.com/random?23",
         imageCard4: "https://source.unsplash.com/random?24"
     },
-    
+
     {
         id: 'portfolio3',
-        title: 'Project Title 3',
-        description: 'Project Description 3.',
+        title: 'Architech',
+        description: 'Design Instruments for Architects',
         imageURL: 'url(images/P3.png)',
         videoURL: 'videos/P3.mp4',
         symbolURL: 'symbols/P3.svg',
-        bigtext: 'Project Big Text 3',
+        bigtext: 'Elevating Design with flawless plans from concepts - visible and automatically correct',
         backgroundImage: "https://source.unsplash.com/random?3",
         textContentLeft: "Description for Project 3 left",
         imageContentRight: "Image for Project 3 right",
@@ -66,15 +66,15 @@ const portfolioProjects = [
         imageCard3: "https://source.unsplash.com/random?33",
         imageCard4: "https://source.unsplash.com/random?34"
     },
-    
+
     {
         id: 'portfolio4',
-        title: 'Project Title 4',
-        description: 'Project Description 4.',
+        title: 'Dunlop Golf Glove',
+        description: 'Design With Style',
         imageURL: 'url(images/P4.png)',
         videoURL: 'videos/P4.mp4',
         symbolURL: 'symbols/P4.svg',
-        bigtext: 'Project Big Text 4',
+        bigtext: 'A stylish recovery inspired',
         backgroundImage: "https://source.unsplash.com/random?4",
         textContentLeft: "Description for Project 4 left",
         imageContentRight: "Image for Project 4 right",
@@ -87,15 +87,15 @@ const portfolioProjects = [
         imageCard3: "https://source.unsplash.com/random?43",
         imageCard4: "https://source.unsplash.com/random?44"
     },
-    
+
     {
         id: 'portfolio5',
-        title: 'Project Title 5',
-        description: 'Project Description 5.',
-        imageURL: 'url(images/P5.png)',
-        videoURL: 'videos/P5.mp4',
+        title: 'Winter in Chisnau',
+        description: 'Design for Context',
+        imageURL: 'url(images/P5A.png)',
+        videoURL: 'videos/P5BSquare.mp4',
         symbolURL: 'symbols/P5.svg',
-        bigtext: 'Project Big Text 5',
+        bigtext: 'Improving the city, improving dog welfare',
         backgroundImage: "https://source.unsplash.com/random?5",
         textContentLeft: "Description for Project 5 left",
         imageContentRight: "Image for Project 5 right",
@@ -108,15 +108,15 @@ const portfolioProjects = [
         imageCard3: "https://source.unsplash.com/random?53",
         imageCard4: "https://source.unsplash.com/random?54"
     },
-    
+
     {
         id: 'portfolio6',
-        title: 'Project Title 6',
-        description: 'Project Description 6.',
+        title: 'The Social Water Front',
+        description: 'Design for Blend',
         imageURL: 'url(images/P6.png)',
         videoURL: 'videos/P6.mp4',
         symbolURL: 'symbols/P6.svg',
-        bigtext: 'Project Big Text 6',
+        bigtext: 'Merging into Lausanne with Nordic-Inspired Social Space',
         backgroundImage: "https://source.unsplash.com/random?6",
         textContentLeft: "Description for Project 6 left",
         imageContentRight: "Image for Project 6 right",
@@ -129,7 +129,7 @@ const portfolioProjects = [
         imageCard3: "https://source.unsplash.com/random?63",
         imageCard4: "https://source.unsplash.com/random?64"
     },
-    
+
 ];
 
 export default portfolioProjects;

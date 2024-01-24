@@ -23,14 +23,14 @@
 
   /* Set the width of the sidebar to 250px (show it) */
   function openNav() {
-    var navbar = document.getElementById("nav-side");
+    var navbar = document.getElementById("project-nav");
     navbar.style.width = "10px";
     navbar.style.opacity = "100";
   }
 
   /* Set the width of the sidebar to 0 (hide it) */
   function closeNav() {
-    var navbar = document.getElementById("nav-side");
+    var navbar = document.getElementById("project-nav");
       navbar.style.width = "0";
       navbar.style.opacity = "0";
   }
@@ -54,7 +54,7 @@ let bgElement = document.getElementById('dynamic-bg');
   window.addEventListener('scroll', checkVisibility);
   window.addEventListener('DOMContentLoaded', initialize);
 
-  document.getElementById('nav-side').addEventListener('mouseleave', closeNav);
+  document.getElementById('project-nav').addEventListener('mouseleave', closeNav);
   document.getElementById('logo').addEventListener('mouseenter', openNav);
   // document.getElementById('nav-side-closebtn').addEventListener('click', closeNav);
 
