@@ -1,4 +1,5 @@
 import { PORTFOLIOPROJECTS } from './portfolioData.js';
+
 const sidebar = document.querySelector('.sidebar');
 const leftTickerText = document.querySelector('.left-ticker-text');
 
@@ -18,7 +19,7 @@ PORTFOLIOPROJECTS.forEach(project => {
     symbolP.src = project.symbolURL;
 
     const titleLink = document.createElement('a');
-    titleLink.href = `/ProjectPages/projectTemplate.html?project=${project.id}`;
+    titleLink.href = window.location.href+`/ProjectPages/projectTemplate.html?project=${project.id}`;
     titleLink.className = 'portfolio-item';
     titleLink.textContent = project.title;
     titleLink.onmouseenter = () => showImageAnBigText(project.id);
