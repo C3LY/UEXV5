@@ -1,21 +1,4 @@
  /* ---------- float image --------- */
-// function isInViewport(element) {
-//     const rect = element.getBoundingClientRect();
-//     return (
-//       rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-//       rect.bottom >= 0
-//     );
-//   }
-
-//   function checkVisibility() {
-//     const img = document.getElementById('floatImage');
-//     if (isInViewport(img)) {
-//       img.classList.add('visible');
-//     } else {
-//       img.classList.remove('visible');
-//     }
-//   }
-
   function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -74,6 +57,40 @@ let bgElement = document.getElementById('dynamic-bg');
   document.getElementById('nav-side').addEventListener('mouseleave', closeNav);
   document.getElementById('logo').addEventListener('mouseenter', openNav);
   // document.getElementById('nav-side-closebtn').addEventListener('click', closeNav);
+
+ /* -------------------- enlarging images --------------------  */
+ 
+ const images = document.querySelectorAll('.enlargeImageAbility');
+
+// Function to handle image click
+function handleImageClick(event) {
+  const image = event.currentTarget;
+
+  // Check if the image is already enlarged
+  const isEnlarged = image.classList.contains('enlarged');
+
+  // If not enlarged, enlarge it; otherwise, remove the 'enlarged' class
+  if (!isEnlarged) {
+    image.classList.add('enlarged');
+  } else {
+    image.classList.remove('enlarged');
+  }
+}
+
+// Add click listeners to each image
+images.forEach(image => {
+  image.addEventListener('click', handleImageClick);
+});
+
+// Function to handle clicks outside of enlarged images
+document.addEventListener('click', function(event) {
+  images.forEach(image => {
+    if (!image.contains(event.target)) {
+      image.classList.remove('enlarged');
+    }
+  });
+});
+
 
 
 
