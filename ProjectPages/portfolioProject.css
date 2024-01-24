@@ -59,7 +59,7 @@
   .title-section {
     height: 80vh;
     width: 80vw;
-    background: url(images/P1.png) no-repeat center center;
+    background: no-repeat center center;
     background-size: cover;
     display: flex;
     align-items: flex-end;
@@ -162,10 +162,12 @@
     /* Dark text color */
   }
 
-
-  .floatingImage {
+  .content-image {
     width: 100%;
     max-width: 400px;
+  }
+
+  .floatingImage {
     /* Maximum image width */
     opacity: 0;
     transform: translate3d(0, 80px, 0);
@@ -173,11 +175,15 @@
     transition: opacity 700ms ease-out, transform 700ms ease-out;
     will-change: opacity, transform;
 
+
+  }
+
+  .greyscale {
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
   }
 
-  .floatingImage:hover {
+  .greyscale:hover{
     filter: none;
     -webkit-filter: grayscale(0);
   }
@@ -201,7 +207,7 @@
 
   .parallax-text {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0;
     transform: translateY(-50%);
     font-size: 5rem;

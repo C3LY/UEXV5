@@ -1,19 +1,42 @@
-function isInViewport(element) {
+ /* ---------- float image --------- */
+// function isInViewport(element) {
+//     const rect = element.getBoundingClientRect();
+//     return (
+//       rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+//       rect.bottom >= 0
+//     );
+//   }
+
+//   function checkVisibility() {
+//     const img = document.getElementById('floatImage');
+//     if (isInViewport(img)) {
+//       img.classList.add('visible');
+//     } else {
+//       img.classList.remove('visible');
+//     }
+//   }
+
+  function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
       rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.bottom >= 0
     );
   }
-
+  
   function checkVisibility() {
-    const img = document.getElementById('floatImage');
-    if (isInViewport(img)) {
-      img.classList.add('visible');
-    } else {
-      img.classList.remove('visible');
-    }
+    const images = document.querySelectorAll('.floatingImage');
+    images.forEach(img => {
+      if (isInViewport(img)) {
+        img.classList.add('visible');
+      } else {
+        img.classList.remove('visible');
+      }
+    });
   }
+  
+
+   /* ---------- navbar --------- */
 
   /* Set the width of the sidebar to 250px (show it) */
   function openNav() {
@@ -30,12 +53,26 @@ function isInViewport(element) {
   }
 
 
+  function changeBackgroundImage() {
+let bgElement = document.getElementById('dynamic-bg');
+    let imagePath = bgElement.getAttribute('data-image-path');
+
+    bgElement.style.backgroundImage = `url('${imagePath}')`;  
+  }
+
   window.addEventListener('scroll', checkVisibility);
 
-  // Check on initial load
-  window.addEventListener('DOMContentLoaded', checkVisibility);
+  function initialize() {
+    changeBackgroundImage();
+    checkVisibility();
+  }
+  
+  window.addEventListener('scroll', checkVisibility);
+  window.addEventListener('DOMContentLoaded', initialize);
 
-  // Card script
+
+ /* ---------- card script --------- */
+
   document.querySelectorAll('.card').forEach(function(card) {
   card.addEventListener('mouseenter', function(event) {
     const rect = card.getBoundingClientRect();
