@@ -1,0 +1,110 @@
+<!-- GPT Recreate this screenshot, it is a portfolio project page. The title is big on the left bottom side of the screen, a huge background image is behind it that overflows down, when you scroll down, there is text as shown in the second screenshot,moving down there is a video , when you scroll down further you get a text page as shown in fourth image
+To create a portfolio project page similar to the screenshots you've provided, we will need to structure the HTML to have a large title on the left with an oversized background image, a scrolling text section, a video section, and a final text page. Here's a prototype layout using HTML and CSS: -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Project</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <link href="portfolioProject.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <a href="index.html">
+    <h1 class="logo" onmouseenter="openNav()"> &lt; UEX Portfolio</h1>
+  </a>
+  <nav class="nav-side" id="nav-side" onmouseleave="closeNav()">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> <span>&times; </span> </a>
+    <a href="ProjectPages/P1.html"> <span id="portfolio1">Design For Empathy</span> </a> - 
+    <a href="ProjectPages/P2.html"> <span id="portfolio2">Design For Environmental and Social Transformations</span> </a> - 
+    <a href="ProjectPages/P3.html"> <span id="portfolio3">Design Instruments for Architects</span> </a> - 
+    <a href="ProjectPages/P4.html"> <span id="portfolio4">Design With Style</span> </a> - 
+    <a href="ProjectPages/P5.html"> <span id="portfolio5">Design For Context</span> </a> -
+    <a href="ProjectPages/P6.html"> <span id="portfolio6">Design For Blend</span> </a>
+  </nav>
+
+  <div class="title-container">
+    <div class="section title-section">
+      <div class="title">Transcarry</div>
+    </div>
+  </div>
+
+  <!-- Project Description -->
+  <div class="header">Project Description</div>
+  <div class="content">
+
+    <div class="left-column">
+      Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+      crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+      appeal of the premium vessel.
+      <br><br>
+      <!-- <a href="#book" class="context-link">Book your luxury charter.</a> -->
+    </div>
+
+    <div class="right-column">
+      <img class="floatingImage" id="floatImage" src="https://source.unsplash.com/random/400x300" alt="Random Unsplash Image">
+    </div>
+  </div>
+
+  <!-- The Process -->
+  <div class="header">The Process</div>
+  <div class="content">
+
+    <div class="left-column">
+      Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+      crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+      appeal of the premium vessel.
+      <br><br>
+    </div>
+
+    <div class="right-column">
+      Blah blah blah
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="image-container" style="background: url('https://source.unsplash.com/random') no-repeat center;"></div>
+    <div style="display: inline-block;">
+      <div class="parallax-text" aria-hidden="true">One Two Three Four Five</div>
+    </div>
+  </div>
+
+  <!-- Experience and Opinion-->
+  <div class="header">My Experience and Opinion</div>
+  <div class="content experienceText">
+
+    Daring to be different and drawing inspiration from the sleek black and green Axopar that cruises above Cayman's
+    crystal blue waters, the Waterhouse Charters brand was born to reflect the long lines, sexy curves, and overall
+    appeal of the premium vessel.
+    <br><br>
+
+  </div>
+
+  <div class="card-container">
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random" alt="Placeholder">
+      <div class="info">Test</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?apple" alt="Placeholder">
+      <div class="info">Card Text 2</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?2" alt="Placeholder">
+      <div class="info">Card Text 3</div>
+    </div>
+    <div class="card" data-direction="">
+      <img src="https://source.unsplash.com/random?3" alt="Placeholder">
+      <div class="info">Card Text 4</div>
+    </div>
+  </div>
+
+
+  <script type="module" src="portfolioProject.js"></script>
+
+</body>
+
+</html>
