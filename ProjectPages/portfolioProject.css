@@ -131,6 +131,7 @@ a:hover {
   font-size: 1em;
   /* Smaller font size for the left column */
   padding-right: 10%;
+  padding-top: 5%;
   /* Space between the columns */
   display: flex;
 
@@ -148,9 +149,7 @@ a:hover {
 .right-column {
   width: 40vh;
   font-size: 1em;
-  /* Larger font size for the right column */
   flex: 2;
-  /* Take up 2/3 of the content space */
   line-height: 1.2;
   color: #333;
   padding-right: 5vh;
@@ -241,8 +240,9 @@ a:hover {
 /* ---------- Experience Section --------- */
 
 .experienceText {
+
   text-align: left;
-  max-width: 20vw;
+  max-width: 30vw;
   max-height: 10vh;
 }
 

@@ -12,6 +12,7 @@ function loadProjectData(projectData) {
         document.getElementById('project-textProcessLeft').innerHTML = projectData.textProcessLeft;
 
         document.getElementById('project-imageCenter').style.background = 'url(' + projectData.imageCenter + ')';
+        document.getElementById('project-textImproving').innerHTML = projectData.textImproving;
         document.getElementById('project-textMyExperienceAndOpinion').innerHTML = projectData.textMyExperienceAndOpinion;
 
     }
