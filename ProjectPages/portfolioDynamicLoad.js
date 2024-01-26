@@ -15,6 +15,39 @@ function loadProjectData(projectData) {
         document.getElementById('project-textImproving').innerHTML = projectData.textImproving;
         document.getElementById('project-textMyExperienceAndOpinion').innerHTML = projectData.textMyExperienceAndOpinion;
 
+        if (projectData.subProjects && Array.isArray(projectData.subProjects)) {
+            const projectContainer = document.getElementById('subProjects');
+            projectData.subProjects.forEach(subProject => {
+
+                const header = document.createElement('div');
+                header.className = 'subProjectHeader';
+                header.innerHTML = subProject.verb + " - " + subProject.projectTitle;
+                projectContainer.appendChild(header);
+
+                const contentContainer = document.createElement('div');
+                contentContainer.className = 'content';
+
+                const leftContainer = document.createElement('div');
+                leftContainer.className = 'left-column';
+                leftContainer.id = 'subProject-description';
+                leftContainer.innerHTML = subProject.description;
+                contentContainer.appendChild(leftContainer);
+
+
+                const rightContainer = document.createElement('div');
+                rightContainer.className = 'right-column';
+                rightContainer.id = 'subProject-image';
+                const imgForRight = document.createElement('img');
+                imgForRight.className = 'floatingImage content-image enlargeImageAbility';
+                imgForRight.src = subProject.image;
+                rightContainer.appendChild(imgForRight);
+                contentContainer.appendChild(rightContainer);
+
+                projectContainer.appendChild(contentContainer);
+
+            });
+        }
+
     }
 }
 

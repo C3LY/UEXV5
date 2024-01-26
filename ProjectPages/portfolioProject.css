@@ -121,6 +121,14 @@ a:hover {
   letter-spacing: 1px;
 }
 
+.subProjectHeader {
+  margin-top: 10px;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  padding: 50px 50px;
+  letter-spacing: 1px;
+}
+
 .content {
   display: flex;
   padding-left: 90px;
@@ -128,32 +136,23 @@ a:hover {
 }
 
 .left-column {
+  align-items: center;
+  color: #555;
+  display: flex;
+  flex-direction: row;
   font-size: 1em;
-  /* Smaller font size for the left column */
   padding-right: 10%;
   padding-top: 5%;
-  /* Space between the columns */
-  display: flex;
-
   width: 60vh;
-
-  /* Make a horizontal flexbox (the default) */
-  flex-direction: row;
-  /* Take up 1/3 of the content space */
-  color: #555;
-  /* Darker text color for the left column */
-
-  align-items: center;
 }
 
 .right-column {
-  width: 40vh;
-  font-size: 1em;
-  flex: 2;
-  line-height: 1.2;
   color: #333;
+  flex: 2;
+  font-size: 1em;
+  line-height: 1.2;
   padding-right: 5vh;
-  /* Dark text color */
+  width: 40vh;
 }
 
 .content-image {
@@ -222,7 +221,8 @@ a:hover {
   width: 80vh;
   /* Assuming the image is square */
   height: 80vh;
-  background-size: cover;
+  background: no-repeat center;
+  background-size: contain !important;
   z-index: 2;
 }
 
