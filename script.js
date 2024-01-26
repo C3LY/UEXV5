@@ -19,7 +19,7 @@ PORTFOLIOPROJECTS.forEach(project => {
     symbolP.src = project.symbolURL;
 
     const titleLink = document.createElement('a');
-    titleLink.href = `/ProjectPages/projectTemplate.html?project=${project.id}`;
+    titleLink.href = `ProjectPages/projectTemplate.html?project=${project.id}`;
     titleLink.className = 'portfolio-item';
     titleLink.textContent = project.title;
     titleLink.onmouseenter = () => showImageAnBigText(project.id);
