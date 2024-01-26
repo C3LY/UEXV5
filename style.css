@@ -129,18 +129,17 @@ a {
 }
 
 .image-preview {
-    background-color: rgba(35, 32, 32, 0.394);
+    background-color: rgba(2, 2, 2, 0.394);
     /* width: 50%; */
     /* Image preview takes up the other half */
     height: 90vh;
     position: fixed;
     right: 5vh;
     top: 5vh;
-    background-size: cover;
+    background-size:contain;
     background-position: center;
     transition: background-image 0.5s ease-in-out;
-    display: none;
-    /* Hidden by default */
+    /* display: none; */ /* Hidden by default */
 
     /* ticker */
     position: absolute;

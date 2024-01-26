@@ -136,8 +136,8 @@ export const PORTFOLIOPROJECTS = [
             {image:"../images/P5Extras/P6_DogGuidesInspo.png", text:"Inspiration - Post-Soviet visual. Abandoned Soviet cafe in Chisinau, Moldova, 2015. By Soviet Visuals"},
         ],
         imageCenter: "https://images.unsplash.com/photo-1629045951387-6d86eb2aad3d?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        textImproving: "...",
-        textMyExperienceAndOpinion: " Finding a holistic contextual solution for non-human characters, such as dogs, was satisfying yet difficult at the same time.  It also prompted consideration of sustainable practices for repurposing places and buildings. I propose that before delving into solutions, we could introduce an intermediary 'Where' phase.. Furthermore, I think it's better to concentrate on honing one idea rather than distributing my efforts across several, as certain responses seemed forced.",
+        textImproving: "Finding a holistic contextual solution for non-human characters, such as dogs, was satisfying yet difficult at the same time.  It also prompted consideration of sustainable practices for repurposing places and buildings. ",
+        textMyExperienceAndOpinion: "I propose that before delving into solutions, I think we could have had a deeper 'Where' phase - exploring emotions, history, verbs and attributes of locations.  Furthermore, I think it's better to concentrate on honing one idea rather than distributing my efforts across several, as certain ideas started to feel forced.",
         imageResultsCards: [
             {image:"../images/P5Extras/P6_1.png", text:"Dog Guide - Dog Social Room"},
             {image:"../images/P5Extras/P6_2.png", text:"Shelter - Dog on Roof"},

@@ -79,5 +79,3 @@ function hideImageAndBigText() {
     var bigTextPreview = document.getElementById('bigTextPreview');
     bigTextPreview.style.display = 'none'; // Hide the image box;
 }
-
-

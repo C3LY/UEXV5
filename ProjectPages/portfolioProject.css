@@ -198,19 +198,17 @@ a:hover {
   position: relative;
 }
 
-
 .parallax-text {
   position: absolute;
   top: 60%;
   right: 0;
-  transform: translateY(-50%);
+  transform: translateY(-20%);
   font-size: 5rem;
-  font-weight: 800;
   color: #6868689a;
   z-index: -1;
   pointer-events: none;
   text-align: right;
-  width: 30%;
+  width: 70%;
   /* Adjust the width as necessary */
   max-width: fit-content;
   /* Adjust max-width as necessary for responsiveness */
@@ -224,6 +222,10 @@ a:hover {
   background: no-repeat center;
   background-size: contain !important;
   z-index: 2;
+}
+
+.image-container:hover {
+  opacity: 0.2;
 }
 
 @media (max-width: 768px) {
