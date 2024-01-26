@@ -92,7 +92,7 @@ function buildNavBar() {
     const navBar = document.getElementById('project-nav');
     PORTFOLIOPROJECTS.forEach(project => {
         const link = document.createElement('a');
-        link.href = `projectTemplate.html?project=${project.id}`;
+        link.href = `ProjectPages/projectTemplate.html?project=${project.id}`;
         link.innerText = project.description;
         navBar.appendChild(link);
         navBar.appendChild(document.createTextNode(' - '));
